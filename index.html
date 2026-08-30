@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="MBrutals — Neo Brutalist CSS Framework for everyone."
+  >
+
+  <title>MBrutals — Neo Brutalist CSS Framework</title>
+
+  <!-- MBrutals -->
+  <link rel="stylesheet" href="src/mbrutals.css">
+
+  <style>
+    /* =========================================
+       LANDING PAGE ONLY
+       ========================================= */
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(20, 27, 43, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 27, 43, .08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .display-title {
+      font-size: clamp(4rem, 13vw, 10rem);
+      line-height: .82;
+      letter-spacing: -.08em;
+      font-weight: 950;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+      font-weight: 950;
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 3px solid var(--mb-border);
+      border-bottom: 3px solid var(--mb-border);
+      background: var(--mb-yellow);
+      padding: 14px 0;
+      font-weight: 900;
+    }
+
+    .marquee-inner {
+      display: inline-block;
+      animation: marquee 18s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .big-m {
+      font-size: clamp(12rem, 35vw, 35rem);
+      line-height: .7;
+      font-weight: 950;
+      letter-spacing: -.12em;
+      user-select: none;
+    }
+
+    .code {
+      background: #171717;
+      color: #fff;
+      border: 3px solid var(--mb-border);
+      box-shadow: 8px 8px 0 var(--mb-border);
+      padding: 24px;
+      overflow-x: auto;
+      font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .swatch {
+      height: 110px;
+      border: 3px solid var(--mb-border);
+      box-shadow: 6px 6px 0 var(--mb-border);
+      padding: 12px;
+      display: flex;
+      align-items: end;
+      font-weight: 900;
+    }
+
+    .floating {
+      transform: rotate(-3deg);
+    }
+
+    .floating-right {
+      transform: rotate(3deg);
+    }
+
+    @media (max-width: 768px) {
+      .display-title {
+        font-size: 4.5rem;
+      }
+
+      .big-m {
+        font-size: 15rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="mb-bg">
+
+  <!-- =========================================
+       NAVBAR
+       ========================================= -->
+
+  <header class="mb-container mb-py-5">
+
+    <nav class="mb-navbar mb-card mb-bg-white">
+
+      <a href="#" class="mb-navbar-brand">
+        <span class="mb-avatar mb-bg-blue">M</span>
+
+        <span>
+          <strong>MBrutals</strong>
+          <small class="mb-text-muted">
+            CSS Framework
+          </small>
+        </span>
+      </a>
+
+      <div class="mb-navbar-nav">
+
+        <a href="#features" class="mb-nav-link">
+          Features
+        </a>
+
+        <a href="#components" class="mb-nav-link">
+          Components
+        </a>
+
+        <a href="#install" class="mb-nav-link">
+          Install
+        </a>
+
+        <a href="https://github.com/" class="mb-btn mb-btn-dark">
+          GitHub ↗
+        </a>
+
+      </div>
+
+      <button
+        class="mb-btn mb-btn-yellow mb-navbar-toggle"
+        data-mb-toggle="navbar"
+      >
+        ☰
+      </button>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================================
+       HERO
+       ========================================= -->
+
+  <main>
+
+    <section class="hero-grid">
+
+      <div class="mb-container mb-py-16">
+
+        <div class="mb-grid mb-grid-2 mb-items-center mb-gap-12">
+
+          <div>
+
+            <div class="mb-flex mb-flex-wrap mb-gap-3 mb-mb-6">
+
+              <span class="mb-badge mb-badge-pink">
+                ✦ CSS FRAMEWORK
+              </span>
+
+              <span class="mb-badge mb-badge-green">
+                v0.1.0
+              </span>
+
+            </div>
+
+            <h1 class="display-title mb-mb-8">
+              M<span class="mb-text-blue">BRUTALS</span>
+            </h1>
+
+            <p class="mb-text-xl mb-mb-8" style="max-width: 650px;">
+              Neo Brutalist CSS framework untuk membuat website
+              modern, berani, dan punya karakter — tanpa framework
+              JavaScript.
+            </p>
+
+            <div class="mb-flex mb-flex-wrap mb-gap-4">
+
+              <a
+                href="#install"
+                class="mb-btn mb-btn-blue mb-btn-lg"
+              >
+                Get Started →
+              </a>
+
+              <a
+                href="#components"
+                class="mb-btn mb-btn-white mb-btn-lg"
+              >
+                Explore Components
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- HERO CARD -->
+
+          <div class="mb-card mb-bg-yellow floating">
+
+            <div class="mb-flex mb-justify-between mb-items-center mb-mb-8">
+
+              <span class="mb-badge mb-badge-dark">
+                MBRUTALS
+              </span>
+
+              <span class="mb-text-2xl">
+                ✦
+              </span>
+
+            </div>
+
+            <div class="big-m">
+              M
+            </div>
+
+            <h2 class="mb-text-3xl mb-mt-6">
+              BUILD LOUD.
+            </h2>
+
+            <p class="mb-mt-3">
+              Make your interface impossible to ignore.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MARQUEE
+         ========================================= -->
+
+    <div class="marquee">
+
+      <div class="marquee-inner">
+
+        ✦ NEO BRUTALISM
+        &nbsp;&nbsp;&nbsp;
+        ✦ CSS FIRST
+        &nbsp;&nbsp;&nbsp;
+        ✦ VANILLA HTML
+        &nbsp;&nbsp;&nbsp;
+        ✦ NO FRAMEWORK REQUIRED
+        &nbsp;&nbsp;&nbsp;
+        ✦ RESPONSIVE
+        &nbsp;&nbsp;&nbsp;
+
+        ✦ NEO BRUTALISM
+        &nbsp;&nbsp;&nbsp;
+        ✦ CSS FIRST
+        &nbsp;&nbsp;&nbsp;
+        ✦ VANILLA HTML
+        &nbsp;&nbsp;&nbsp;
+        ✦ NO FRAMEWORK REQUIRED
+        &nbsp;&nbsp;&nbsp;
+        ✦ RESPONSIVE
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         INTRO
+         ========================================= -->
+
+    <section class="mb-container mb-py-16">
+
+      <div class="mb-grid mb-grid-2 mb-gap-12 mb-items-center">
+
+        <div>
+
+          <span class="mb-badge mb-badge-purple mb-mb-5">
+            WHY MBRUTALS?
+          </span>
+
+          <h2 class="section-title">
+            CSS yang
+            <span class="mb-highlight mb-highlight-blue">
+              nggak membosankan.
+            </span>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="mb-text-lg mb-mb-6">
+            MBrutals dibuat untuk developer yang ingin membangun
+            interface dengan visual Neo Brutalism tanpa harus
+            menggunakan React, Next.js, atau library JavaScript
+            tertentu.
+          </p>
+
+          <p class="mb-text-lg">
+            Tinggal import CSS, tambahkan class, lalu mulai membuat
+            website.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FEATURES
+         ========================================= -->
+
+    <section id="features" class="mb-container mb-pb-16">
+
+      <div class="mb-flex mb-justify-between mb-items-end mb-mb-10">
+
+        <div>
+
+          <span class="mb-badge mb-badge-pink mb-mb-4">
+            FEATURES
+          </span>
+
+          <h2 class="section-title">
+            Built for
+            <span class="mb-text-blue">the web.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="mb-grid mb-grid-3 mb-gap-6">
+
+        <article class="mb-card mb-bg-blue">
+
+          <div class="mb-icon-box mb-bg-white mb-mb-6">
+            ⚡
+          </div>
+
+          <h3 class="mb-text-2xl">
+            Lightweight
+          </h3>
+
+          <p class="mb-mt-3">
+            Fokus pada CSS yang mudah digunakan tanpa dependency
+            framework frontend.
+          </p>
+
+        </article>
+
+
+        <article class="mb-card mb-bg-pink floating-right">
+
+          <div class="mb-icon-box mb-bg-white mb-mb-6">
+            ◈
+          </div>
+
+          <h3 class="mb-text-2xl">
+            Neo Brutalist
+          </h3>
+
+          <p class="mb-mt-3">
+            Thick borders, hard shadows, bold typography,
+            dan warna-warna yang berani.
+          </p>
+
+        </article>
+
+
+        <article class="mb-card mb-bg-green">
+
+          <div class="mb-icon-box mb-bg-white mb-mb-6">
+            ✓
+          </div>
+
+          <h3 class="mb-text-2xl">
+            Easy to Use
+          </h3>
+
+          <p class="mb-mt-3">
+            Cukup HTML + CSS. Tidak perlu mempelajari framework
+            baru untuk membuat UI.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         COMPONENT SHOWCASE
+         ========================================= -->
+
+    <section id="components" class="mb-section mb-bg-lavender">
+
+      <div class="mb-container mb-py-16">
+
+        <div class="mb-text-center mb-mb-12">
+
+          <span class="mb-badge mb-badge-yellow">
+            COMPONENTS
+          </span>
+
+          <h2 class="section-title mb-mt-5">
+            Everything you need.
+          </h2>
+
+          <p class="mb-text-lg mb-mt-5">
+            Komponen UI siap pakai untuk project kecil maupun besar.
+          </p>
+
+        </div>
+
+
+        <div class="mb-grid mb-grid-3 mb-gap-6">
+
+
+          <!-- BUTTON -->
+
+          <div class="mb-card mb-bg-white">
+
+            <h3 class="mb-text-xl mb-mb-5">
+              Buttons
+            </h3>
+
+            <div class="mb-flex mb-flex-wrap mb-gap-3">
+
+              <button class="mb-btn mb-btn-dark">
+                Dark
+              </button>
+
+              <button class="mb-btn mb-btn-blue">
+                Blue
+              </button>
+
+              <button class="mb-btn mb-btn-pink">
+                Pink
+              </button>
+
+              <button class="mb-btn mb-btn-yellow">
+                Yellow
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- BADGES -->
+
+          <div class="mb-card mb-bg-white">
+
+            <h3 class="mb-text-xl mb-mb-5">
+              Badges
+            </h3>
+
+            <div class="mb-flex mb-flex-wrap mb-gap-3">
+
+              <span class="mb-badge mb-badge-blue">
+                BLUE
+              </span>
+
+              <span class="mb-badge mb-badge-pink">
+                PINK
+              </span>
+
+              <span class="mb-badge mb-badge-green">
+                SUCCESS
+              </span>
+
+              <span class="mb-badge mb-badge-yellow">
+                NEW
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- ALERT -->
+
+          <div class="mb-card mb-bg-white">
+
+            <h3 class="mb-text-xl mb-mb-5">
+              Alerts
+            </h3>
+
+            <div class="mb-alert mb-alert-blue">
+              ℹ️ This is an information alert.
+            </div>
+
+          </div>
+
+
+          <!-- PROGRESS -->
+
+          <div class="mb-card mb-bg-white">
+
+            <h3 class="mb-text-xl mb-mb-5">
+              Progress
+            </h3>
+
+            <div class="mb-progress">
+
+              <div
+                class="mb-progress-bar mb-bg-blue"
+                style="width: 72%;"
+              ></div>
+
+            </div>
+
+            <div class="mb-flex mb-justify-between mb-mt-3">
+              <span>Loading</span>
+              <strong>72%</strong>
+            </div>
+
+          </div>
+
+
+          <!-- AVATAR -->
+
+          <div class="mb-card mb-bg-white">
+
+            <h3 class="mb-text-xl mb-mb-5">
+              Avatars
+            </h3>
+
+            <div class="mb-flex mb-gap-3">
+
+              <div class="mb-avatar mb-bg-blue">
+                M
+              </div>
+
+              <div class="mb-avatar mb-bg-pink">
+                B
+              </div>
+
+              <div class="mb-avatar mb-bg-yellow">
+                !
+              </div>
+
+              <div class="mb-avatar mb-bg-green">
+                ✓
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CARD -->
+
+          <div class="mb-card mb-bg-yellow">
+
+            <span class="mb-badge mb-badge-dark mb-mb-5">
+              CARD
+            </span>
+
+            <h3 class="mb-text-xl">
+              Neo Brutal Card
+            </h3>
+
+            <p class="mb-mt-3">
+              Hard shadow + thick border + bold typography.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         COLOR SYSTEM
+         ========================================= -->
+
+    <section class="mb-container mb-py-16">
+
+      <div class="mb-grid mb-grid-2 mb-gap-12 mb-items-center">
+
+        <div>
+
+          <span class="mb-badge mb-badge-green">
+            DESIGN TOKENS
+          </span>
+
+          <h2 class="section-title mb-mt-5">
+            Loud colors.
+            <span class="mb-text-pink">
+              Simple rules.
+            </span>
+          </h2>
+
+          <p class="mb-text-lg mb-mt-6">
+            MBrutals menggunakan palette yang kuat untuk menjaga
+            karakter Neo Brutalist tetap terasa di setiap component.
+          </p>
+
+        </div>
+
+
+        <div class="mb-grid mb-grid-2 mb-gap-5">
+
+          <div
+            class="swatch"
+            style="background:#9ecbff;"
+          >
+            BLUE
+          </div>
+
+          <div
+            class="swatch"
+            style="background:#ffb7dc;"
+          >
+            PINK
+          </div>
+
+          <div
+            class="swatch"
+            style="background:#fff18a;"
+          >
+            YELLOW
+          </div>
+
+          <div
+            class="swatch"
+            style="background:#baf5ce;"
+          >
+            GREEN
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         INSTALLATION
+         ========================================= -->
+
+    <section id="install" class="mb-section mb-bg-dark">
+
+      <div class="mb-container mb-py-16">
+
+        <div class="mb-grid mb-grid-2 mb-gap-12 mb-items-center">
+
+          <div>
+
+            <span class="mb-badge mb-badge-yellow">
+              GET STARTED
+            </span>
+
+            <h2 class="section-title mb-text-white mb-mt-5">
+              Start building
+              <span class="mb-text-blue">
+                today.
+              </span>
+            </h2>
+
+            <p class="mb-text-lg mb-text-white mb-mt-6">
+              Download MBrutals, masukkan CSS ke project kamu,
+              lalu gunakan component dengan class yang tersedia.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="code">
+              <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;link
+    rel="stylesheet"
+    href="mbrutals.css"
+  &gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;button class="mb-btn mb-btn-blue"&gt;
+    Hello MBrutals
+  &lt;/button&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+              </code>
+            </div>
+
+            <button
+              class="mb-btn mb-btn-yellow mb-mt-6"
+              data-mb-copy='&lt;button class="mb-btn mb-btn-blue"&gt;Hello MBrutals&lt;/button&gt;'
+            >
+              Copy Example
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FINAL CTA
+         ========================================= -->
+
+    <section class="mb-container mb-py-16">
+
+      <div class="mb-card mb-bg-pink mb-text-center">
+
+        <span class="mb-badge mb-badge-dark">
+          MBRUTALS
+        </span>
+
+        <h2 class="section-title mb-mt-6">
+          Make it bold.
+        </h2>
+
+        <p class="mb-text-lg mb-mt-5">
+          Build websites that actually have personality.
+        </p>
+
+        <div class="mb-flex mb-justify-center mb-flex-wrap mb-gap-4 mb-mt-8">
+
+          <a
+            href="#install"
+            class="mb-btn mb-btn-dark mb-btn-lg"
+          >
+            Get MBrutals
+          </a>
+
+          <a
+            href="#components"
+            class="mb-btn mb-btn-white mb-btn-lg"
+          >
+            View Components
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer class="mb-container mb-py-8">
+
+    <div class="mb-flex mb-justify-between mb-items-center mb-flex-wrap mb-gap-5">
+
+      <div>
+
+        <strong class="mb-text-xl">
+          MBrutals.
+        </strong>
+
+        <p class="mb-text-muted mb-mt-2">
+          Neo Brutalist CSS Framework.
+        </p>
+
+      </div>
+
+      <div class="mb-flex mb-gap-5">
+
+        <a href="#features">
+          Features
+        </a>
+
+        <a href="#components">
+          Components
+        </a>
+
+        <a href="#install">
+          Install
+        </a>
+
+      </div>
+
+    </div>
+
+    <hr class="mb-mt-8">
+
+    <div class="mb-flex mb-justify-between mb-items-center mb-flex-wrap mb-gap-3 mb-mt-5">
+
+      <small>
+        © 2026 MBrutals. All rights reserved.
+      </small>
+
+      <small>
+        Built with MBrutals ✦
+      </small>
+
+    </div>
+
+  </footer>
+
+
+  <!-- MBrutals JavaScript -->
+  <script src="src/mbrutals.js"></script>
+
+</body>
+</html>
