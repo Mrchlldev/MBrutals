@@ -1,348 +1,145 @@
 <!doctype html>
-<html lang="en" data-mb-font="archivo" data-mb-theme="light">
+<html lang="en" data-mb-font="archivo">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="MBrutals 1.3 — modern Neo Brutalist CSS framework for plain HTML.">
-  <title>MBrutals — Build loud.</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/mbrutals.css">
-
-  <style>
-    :root{--demo-bg:#f7f7f2;--demo-ink:#111827;--demo-blue:#a8d5ff;--demo-pink:#ffc4e1;--demo-yellow:#fff08a;--demo-green:#bdf4d0;--demo-purple:#dac7ff}
-    body{overflow-x:hidden}
-    .demo-wrap{width:min(1200px,calc(100% - 32px));margin:auto}
-    .demo-grid-bg{background-image:linear-gradient(rgba(17,24,39,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(17,24,39,.055) 1px,transparent 1px);background-size:28px 28px}
-    .demo-nav{position:sticky;top:16px;z-index:70;width:min(1160px,calc(100% - 24px));margin:16px auto 0;padding:8px;border:3px solid var(--demo-ink);border-radius:22px;background:#fff;box-shadow:7px 7px 0 var(--demo-ink)}
-    .demo-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}.demo-brand{display:flex;align-items:center;gap:10px;font-family:var(--mb-heading-font);font-weight:900}.demo-mark{display:grid;place-items:center;width:48px;height:48px;border:3px solid var(--demo-ink);border-radius:14px;background:var(--demo-blue);box-shadow:4px 4px 0 var(--demo-ink);font-family:var(--mb-heading-font);font-size:1.25rem}.demo-nav-links{display:flex;align-items:center;gap:4px}.demo-nav-links a{padding:10px 12px;border:2px solid transparent;border-radius:11px;font-weight:800}.demo-nav-links a:hover{background:var(--demo-yellow);border-color:var(--demo-ink);transform:translateY(-2px)}
-    .font-switch{display:flex;gap:4px;padding:4px;border:2px solid var(--demo-ink);border-radius:13px;background:#eef1f5}.font-switch button{border:0;border-radius:9px;background:transparent;padding:8px 10px;font-size:.74rem;font-weight:900}.font-switch button.is-active{border:2px solid var(--demo-ink);background:#fff;box-shadow:2px 2px 0 var(--demo-ink);padding:6px 8px}
-    .hero{padding:110px 0 90px}.hero-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:3px solid var(--demo-ink);border-radius:999px;background:var(--demo-pink);box-shadow:4px 4px 0 var(--demo-ink);font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em}.hero h1{margin:25px 0 24px;font-family:var(--mb-heading-font);font-size:clamp(4.5rem,10vw,8.6rem);line-height:.78;letter-spacing:-.09em}.hero h1 .ink{display:block}.hero h1 .blue{position:relative;z-index:1;display:inline-block}.hero h1 .blue:before{content:"";position:absolute;z-index:-1;left:-.06em;right:-.06em;bottom:.01em;height:.45em;border:3px solid var(--demo-ink);border-radius:16px;background:var(--demo-blue);transform:rotate(-1deg)}.hero-copy{max-width:650px;color:#536074;font-size:1.12rem;line-height:1.75;font-weight:600}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.demo-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 18px;border:3px solid var(--demo-ink);border-radius:14px;box-shadow:5px 5px 0 var(--demo-ink);font-weight:900;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s cubic-bezier(.2,.8,.2,1)}.demo-btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--demo-ink)}.demo-blue{background:var(--demo-blue)}.demo-yellow{background:var(--demo-yellow)}.demo-white{background:#fff}
-    .hero-art{position:relative;min-height:520px}.hero-board{position:absolute;inset:25px 20px 25px 15px;padding:20px;border:4px solid var(--demo-ink);border-radius:30px;background:#fff;box-shadow:13px 13px 0 var(--demo-ink);transform:rotate(2deg)}.browser-bar{display:flex;gap:7px;align-items:center;border-bottom:3px solid var(--demo-ink);padding-bottom:14px}.dot{width:13px;height:13px;border:2px solid var(--demo-ink);border-radius:50%}.dot.pink{background:var(--demo-pink)}.dot.yellow{background:var(--demo-yellow)}.dot.green{background:var(--demo-green)}.hero-board-body{padding:35px 12px}.hero-board-title{font-family:var(--mb-heading-font);font-size:clamp(2.5rem,5vw,4.4rem);line-height:.85;letter-spacing:-.07em}.board-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.board-mini{padding:16px;border:3px solid var(--demo-ink);border-radius:17px;box-shadow:5px 5px 0 var(--demo-ink);font-weight:800}.board-mini:nth-child(1){background:var(--demo-yellow)}.board-mini:nth-child(2){background:var(--demo-green)}.sticker{position:absolute;display:grid;place-items:center;width:112px;height:112px;border:4px solid var(--demo-ink);border-radius:50%;background:var(--demo-pink);box-shadow:7px 7px 0 var(--demo-ink);font-family:var(--mb-heading-font);font-size:.78rem;text-align:center;transform:rotate(-12deg)}.sticker.a{top:0;right:-5px}.sticker.b{bottom:0;left:-20px;background:var(--demo-yellow);transform:rotate(10deg)}
-    .marquee{overflow:hidden;border-block:3px solid var(--demo-ink);background:var(--demo-yellow);padding:13px 0;font-weight:900;white-space:nowrap}.marquee span{display:inline-block;animation:marquee 18s linear infinite}@keyframes marquee{to{transform:translateX(-50%)}}
-    .section{padding:100px 0}.section-head{max-width:720px;margin-bottom:50px}.section-head h2{margin:17px 0 14px;font-family:var(--mb-heading-font);font-size:clamp(3rem,6vw,5.2rem);line-height:.88;letter-spacing:-.07em}.section-head p{color:#536074;font-size:1.06rem;line-height:1.7;font-weight:600}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:24px;min-height:255px;border:3px solid var(--demo-ink);border-radius:23px;background:#fff;box-shadow:7px 7px 0 var(--demo-ink);transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s}.feature:hover{transform:translate(-4px,-6px) rotate(-.5deg);box-shadow:12px 13px 0 var(--demo-ink)}.feature:nth-child(2){background:var(--demo-blue)}.feature:nth-child(3){background:var(--demo-yellow)}.feature:nth-child(4){background:var(--demo-pink)}.feature:nth-child(5){background:var(--demo-green)}.feature:nth-child(6){background:var(--demo-purple)}.feature-icon{display:grid;place-items:center;width:50px;height:50px;border:3px solid var(--demo-ink);border-radius:14px;background:#fff;box-shadow:4px 4px 0 var(--demo-ink);font-size:1.25rem;margin-bottom:40px}.feature h3{font-family:var(--mb-heading-font);font-size:1.5rem;letter-spacing:-.03em;margin:0 0 8px}.feature p{margin:0;color:#536074;font-weight:600;line-height:1.6}
-    .palette-section{background:#fff;border-block:3px solid var(--demo-ink)}.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.swatch{height:150px;border:3px solid var(--demo-ink);border-radius:18px;box-shadow:5px 5px 0 var(--demo-ink);display:flex;align-items:end;padding:12px;font-weight:900}.swatch:nth-child(1){background:var(--demo-blue)}.swatch:nth-child(2){background:var(--demo-pink)}.swatch:nth-child(3){background:var(--demo-yellow)}.swatch:nth-child(4){background:var(--demo-green)}.swatch:nth-child(5){background:var(--demo-purple)}.swatch:nth-child(6){background:#fff}
-    .component-section{background:#e9e6ff}.demo-panel{padding:24px;border:3px solid var(--demo-ink);border-radius:24px;background:#fff;box-shadow:8px 8px 0 var(--demo-ink)}.component-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px}.demo-code{overflow:auto;background:#151515;color:#fff;border:3px solid var(--demo-ink);border-radius:18px;box-shadow:7px 7px 0 var(--demo-ink);padding:20px;font:700 .83rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace}.token-blue{color:#9ecbff}.token-pink{color:#ffb7d9}.token-green{color:#b9f5cf}
-    .button-showcase{display:flex;flex-wrap:wrap;gap:10px}.button-showcase .mb-btn{transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s}.button-showcase .mb-btn:hover{transform:translate(3px,3px) rotate(-.5deg)}
-    .form-section{background:var(--demo-green)}.form-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}.form-card{padding:30px;border:4px solid var(--demo-ink);border-radius:27px;background:#fff;box-shadow:10px 10px 0 var(--demo-ink)}.form-card h3{font-family:var(--mb-heading-font);font-size:2rem;line-height:.95;margin:0 0 24px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-card .mb-btn{margin-top:8px}.form-note{padding:18px;border:3px solid var(--demo-ink);border-radius:17px;background:var(--demo-yellow);box-shadow:5px 5px 0 var(--demo-ink);font-weight:800}
-    .cards-section{background:var(--demo-bg)}.layout-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.layout-tabs button{border:3px solid var(--demo-ink);border-radius:12px;background:#fff;box-shadow:4px 4px 0 var(--demo-ink);padding:10px 14px;font-weight:900}.layout-tabs button:hover,.layout-tabs button.active{background:var(--demo-pink);transform:translate(2px,2px);box-shadow:2px 2px 0 var(--demo-ink)}.card-demo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.demo-card{padding:22px;border:3px solid var(--demo-ink);border-radius:21px;background:#fff;box-shadow:7px 7px 0 var(--demo-ink);transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s}.demo-card:hover{transform:translate(-4px,-5px);box-shadow:11px 12px 0 var(--demo-ink)}.demo-card:nth-child(2){background:var(--demo-blue)}.demo-card:nth-child(3){background:var(--demo-yellow)}.demo-card:nth-child(4){background:var(--demo-pink)}.card-demo-list{display:flex;flex-direction:column;gap:14px}.card-demo-list .demo-card{display:grid;grid-template-columns:170px 1fr;align-items:center}.card-demo-list .demo-card .demo-card-media{border-right:3px solid var(--demo-ink);border-radius:0}.demo-card-media{min-height:140px;display:grid;place-items:center;border:3px solid var(--demo-ink);border-radius:16px;background:var(--demo-purple);font-family:var(--mb-heading-font);font-size:3rem}.demo-card-content{padding:18px}.demo-card h3{font-family:var(--mb-heading-font);font-size:1.5rem;line-height:.95;margin:0 0 8px}.demo-card p{margin:0;color:#536074;font-weight:600}
-    .side-section{background:var(--demo-purple)}.side-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.side-card{padding:22px;border:3px solid var(--demo-ink);border-radius:21px;background:#fff;box-shadow:7px 7px 0 var(--demo-ink)}.side-card h3{font-family:var(--mb-heading-font);margin:0 0 8px;font-size:1.35rem}.side-card p{color:#536074;font-weight:600}.side-card .mb-btn{margin-top:12px}
-    .cta{padding:100px 0}.cta-box{position:relative;overflow:hidden;padding:65px;border:4px solid var(--demo-ink);border-radius:30px;background:var(--demo-yellow);box-shadow:12px 12px 0 var(--demo-ink)}.cta-box h2{max-width:750px;margin:18px 0;font-family:var(--mb-heading-font);font-size:clamp(3rem,7vw,6rem);line-height:.84;letter-spacing:-.07em}.cta-box p{max-width:650px;color:#536074;font-size:1.05rem;font-weight:600}.cta-star{position:absolute;right:50px;top:35px;font-size:8rem;line-height:1;font-family:var(--mb-heading-font);transform:rotate(10deg)}
-    footer{border-top:3px solid var(--demo-ink);background:#fff;padding:30px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font-family:var(--mb-heading-font);font-size:1.2rem}.footer-muted{color:#687386;font-size:.88rem;font-weight:600}
-    @media(max-width:900px){.hero-layout,.component-layout,.form-layout{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.palette{grid-template-columns:repeat(3,1fr)}.side-grid{grid-template-columns:1fr}.hero{padding-top:80px}.hero-art{min-height:470px}.demo-nav-links a:nth-child(-n+3){display:none}}
-    @media(max-width:620px){.demo-wrap{width:calc(100% - 24px)}.hero h1{font-size:4.5rem}.hero-art{min-height:390px}.hero-board{inset:25px 5px 20px 5px}.sticker{width:85px;height:85px;font-size:.62rem}.feature-grid,.field-grid,.card-demo-grid,.palette{grid-template-columns:1fr}.section,.cta{padding:75px 0}.card-demo-list .demo-card{display:block}.card-demo-list .demo-card .demo-card-media{border-right:0;border-bottom:3px solid var(--demo-ink)}.cta-box{padding:35px 24px}.cta-star{font-size:4rem;right:20px;top:20px}.footer-inner{align-items:flex-start;flex-direction:column}.font-switch button{padding:7px 8px}.font-switch button.is-active{padding:5px 6px}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MBrutals — Make Interfaces Loud</title>
+<link rel="stylesheet" href="./src/mbrutals.css">
+<style>
+:root{--d-bg:#f8f7f2;--d-ink:#101828;--d-blue:#9acbff;--d-pink:#ffb9db;--d-yellow:#fff08a;--d-green:#b9f4cd;--d-purple:#d8c3ff;--d-orange:#ffc98d}
+body{overflow-x:hidden}.demo-wrap{width:min(1240px,calc(100% - 32px));margin:auto}.noise{position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.topbar{padding:18px 0 0}.nav{position:sticky;top:16px;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:9px;border:3px solid var(--d-ink);border-radius:18px;background:#fff;box-shadow:7px 7px 0 var(--d-ink)}.brand{display:flex;align-items:center;gap:11px;font-weight:950}.mark{display:grid;place-items:center;width:45px;height:45px;border:3px solid var(--d-ink);border-radius:13px;background:var(--d-blue);box-shadow:4px 4px 0 var(--d-ink);font-family:var(--mb-heading);font-size:1.25rem}.navlinks{display:flex;align-items:center;gap:5px}.navlinks a{padding:9px 11px;border:2px solid transparent;border-radius:10px;font-weight:800}.navlinks a:hover{background:var(--d-yellow);border-color:var(--d-ink)}.nav-actions{display:flex;align-items:center;gap:7px}.font-switch{display:flex;padding:3px;border:2px solid var(--d-ink);border-radius:12px;background:#f3f3ef}.font-switch button{border:0;border-radius:8px;padding:7px 9px;background:transparent;font-size:.7rem;font-weight:900}.font-switch button.is-active{background:var(--d-ink);color:#fff}.hero{padding:105px 0 115px;background-image:linear-gradient(rgba(16,24,40,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(16,24,40,.055) 1px,transparent 1px);background-size:28px 28px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}.kicker{display:inline-flex;padding:8px 13px;border:3px solid var(--d-ink);border-radius:999px;background:var(--d-pink);box-shadow:4px 4px 0 var(--d-ink);font-size:.73rem;font-weight:950}.hero h1{margin:27px 0 22px;font-family:var(--mb-heading);font-size:clamp(4rem,9vw,8rem);line-height:.8;letter-spacing:-.09em}.hero h1 em{font-style:normal;display:inline-block;padding:.02em .12em .08em;border:3px solid var(--d-ink);border-radius:19px;background:var(--d-blue);box-shadow:7px 7px 0 var(--d-ink);transform:rotate(-1deg)}.hero p{max-width:680px;color:#536074;font-size:1.14rem;line-height:1.7;font-weight:600}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.hero-art{position:relative;min-height:520px}.poster{position:absolute;inset:25px 15px 20px 30px;border:4px solid var(--d-ink);border-radius:30px;background:#fff;box-shadow:14px 14px 0 var(--d-ink);padding:23px;transform:rotate(2deg);overflow:hidden}.poster::before{content:"";position:absolute;width:220px;height:220px;border:3px solid var(--d-ink);border-radius:50%;background:var(--d-pink);right:-80px;top:-90px}.poster-head{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--d-ink);padding-bottom:14px}.dots{display:flex;gap:6px}.dot{width:12px;height:12px;border:2px solid var(--d-ink);border-radius:50%}.poster-main{padding:42px 12px}.poster-main .mini{font-size:.7rem;font-weight:950;letter-spacing:.12em}.poster-main h2{margin:16px 0;font-family:var(--mb-heading);font-size:clamp(3rem,6vw,5rem);line-height:.82;letter-spacing:-.08em}.poster-line{height:16px;border:3px solid var(--d-ink);border-radius:99px;background:var(--d-yellow);margin:10px 0}.poster-line.short{width:58%;background:var(--d-green)}.float{position:absolute;z-index:3;border:3px solid var(--d-ink);box-shadow:6px 6px 0 var(--d-ink);border-radius:16px;padding:13px 15px;font-weight:950}.float.one{right:-5px;top:5px;background:var(--d-yellow);transform:rotate(7deg)}.float.two{left:0;bottom:12px;background:var(--d-green);transform:rotate(-6deg)}.ticker{border-block:3px solid var(--d-ink);overflow:hidden;background:var(--d-ink);color:#fff}.ticker-track{width:max-content;padding:14px 0;font-weight:950;letter-spacing:.06em;animation:ticker 22s linear infinite}.ticker-track span{margin:0 24px}.ticker b{color:var(--d-yellow)}@keyframes ticker{to{transform:translateX(-50%)}}
+.section{padding:105px 0}.section.alt{background:var(--d-yellow);border-block:3px solid var(--d-ink)}.heading{max-width:760px;margin-bottom:45px}.heading .kicker{background:var(--d-green);box-shadow:4px 4px 0 var(--d-ink)}.heading h2{margin:20px 0 14px;font-family:var(--mb-heading);font-size:clamp(3rem,6vw,5.8rem);line-height:.86;letter-spacing:-.075em}.heading p{color:#536074;font-size:1.08rem;line-height:1.7;font-weight:600}.feature-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:18px}.feature{min-height:310px;padding:25px;border:3px solid var(--d-ink);border-radius:24px;box-shadow:8px 8px 0 var(--d-ink);transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s}.feature:hover{transform:translate(-5px,-7px) rotate(-.5deg);box-shadow:14px 15px 0 var(--d-ink)}.feature.big{grid-row:span 2;background:var(--d-blue)}.feature.pink{background:var(--d-pink)}.feature.green{background:var(--d-green)}.feature.purple{background:var(--d-purple)}.feature.yellow{background:var(--d-yellow)}.feature-num{display:flex;justify-content:space-between;font-weight:950}.feature-num span{display:grid;place-items:center;width:40px;height:40px;border:3px solid var(--d-ink);border-radius:11px;background:#fff}.feature h3{margin:60px 0 10px;font-family:var(--mb-heading);font-size:1.7rem;letter-spacing:-.04em}.feature.big h3{font-size:2.8rem;max-width:430px}.feature p{color:#465166;font-weight:600;line-height:1.6}
+.showcase-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.demo-card{padding:25px;border:3px solid var(--d-ink);border-radius:23px;background:#fff;box-shadow:8px 8px 0 var(--d-ink)}.demo-card h3{margin:0 0 18px;font-family:var(--mb-heading);font-size:1.5rem}.button-wall{display:flex;flex-wrap:wrap;gap:10px}.btn-demo{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:47px;padding:10px 15px;border:3px solid var(--d-ink);border-radius:13px;box-shadow:5px 5px 0 var(--d-ink);font-weight:900;cursor:pointer;transition:transform .16s,box-shadow .16s}.btn-demo:hover{transform:translate(3px,3px) rotate(-1deg);box-shadow:2px 2px 0 var(--d-ink)}.btn-demo:active{transform:translate(5px,5px);box-shadow:none}.blue{background:var(--d-blue)}.pink{background:var(--d-pink)}.yellow{background:var(--d-yellow)}.green{background:var(--d-green)}.purple{background:var(--d-purple)}.dark{background:var(--d-ink);color:#fff}.outline{background:#fff;border-style:dashed}.pill{border-radius:999px}.icon-btn{width:48px;padding:0}.form-demo{display:grid;gap:14px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:7px}.field label{font-size:.78rem;font-weight:950}.mb-input,.mb-select,.mb-textarea{font-size:.93rem}.checks{display:grid;gap:12px}.control-row{display:flex;flex-wrap:wrap;gap:20px;align-items:center}.range-wrap{padding:12px 0}.fake-select{position:relative}.form-note{padding:12px;border:3px solid var(--d-ink);border-radius:14px;background:var(--d-purple);font-size:.82rem;font-weight:750}
+.layouts{display:grid;grid-template-columns:1fr 1fr;gap:20px}.list-card{display:grid;grid-template-columns:130px 1fr;overflow:hidden}.list-thumb{min-height:180px;border-right:3px solid var(--d-ink);background:var(--d-pink);display:grid;place-items:center;font-family:var(--mb-heading);font-size:3rem}.list-body{padding:22px}.list-body h3{margin:0 0 8px;font-family:var(--mb-heading)}.list-body p{margin:0;color:#536074;line-height:1.6}.tabs-demo{margin-top:30px}.sidebar-demo{display:flex;gap:10px;flex-wrap:wrap}.component-preview{padding:28px;border:3px solid var(--d-ink);border-radius:24px;background:var(--d-purple);box-shadow:8px 8px 0 var(--d-ink)}.component-preview h3{font-family:var(--mb-heading);font-size:2rem;margin-top:0}.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price-card{padding:27px;border:3px solid var(--d-ink);border-radius:24px;background:#fff;box-shadow:8px 8px 0 var(--d-ink);transition:transform .2s,box-shadow .2s}.price-card:hover{transform:translateY(-8px);box-shadow:8px 16px 0 var(--d-ink)}.price-card.featured{background:var(--d-pink);transform:translateY(-10px)}.price-card.featured:hover{transform:translateY(-18px)}.price{font-family:var(--mb-heading);font-size:3.6rem;letter-spacing:-.08em}.price-list{padding:0;margin:20px 0;list-style:none}.price-list li{padding:9px 0;border-bottom:2px solid rgba(16,24,40,.14);font-weight:700}.cta{padding:85px 0;background:var(--d-ink);color:#fff}.cta-box{padding:55px;border:3px solid #fff;border-radius:28px;background:var(--d-blue);color:var(--d-ink);box-shadow:12px 12px 0 var(--d-yellow);display:flex;align-items:end;justify-content:space-between;gap:30px}.cta h2{margin:0 0 14px;font-family:var(--mb-heading);font-size:clamp(3rem,7vw,6.5rem);line-height:.83;letter-spacing:-.08em}.footer{padding:30px 0;background:#fff;border-top:3px solid var(--d-ink)}.footer-inner{display:flex;justify-content:space-between;gap:20px}.mobile-only{display:none}
+@media(max-width:950px){.hero-grid,.showcase-grid{grid-template-columns:1fr}.hero-art{min-height:500px}.feature-grid{grid-template-columns:1fr 1fr}.feature.big{grid-row:auto;grid-column:span 2}.pricing{grid-template-columns:1fr}.price-card.featured{transform:none}.navlinks{display:none}.mobile-only{display:inline-flex}.cta-box{flex-direction:column;align-items:flex-start}}
+@media(max-width:640px){.demo-wrap{width:calc(100% - 24px)}.hero{padding:80px 0}.hero h1{font-size:4.3rem}.hero-art{min-height:390px}.poster{inset:20px 5px 20px 15px}.float.one{right:-2px}.float.two{left:-5px}.section{padding:75px 0}.feature-grid{grid-template-columns:1fr}.feature.big{grid-column:auto}.form-row,.layouts{grid-template-columns:1fr}.list-card{grid-template-columns:1fr}.list-thumb{border-right:0;border-bottom:3px solid var(--d-ink);min-height:120px}.cta-box{padding:35px 25px}.footer-inner{flex-direction:column}.font-switch{display:none}}
+</style>
 </head>
 <body>
+<div class="noise"></div>
 
-  <nav class="demo-nav">
-    <div class="demo-nav-inner">
-      <a href="#top" class="demo-brand">
-        <span class="demo-mark">M</span>
-        <span>MBrutals</span>
-      </a>
-
-      <div class="demo-nav-links">
-        <a href="#features">Features</a>
-        <a href="#components">Components</a>
-        <a href="#forms">Forms</a>
-        <a href="#layouts">Layouts</a>
-      </div>
-
-      <div class="font-switch" aria-label="Font style switcher">
-        <button class="mb-font-switch is-active" data-mb-font-switch="archivo">Archivo</button>
-        <button class="mb-font-switch" data-mb-font-switch="syne">Syne</button>
-      </div>
+<header class="topbar demo-wrap">
+<nav class="nav">
+  <a class="brand" href="#top"><span class="mark">M</span><span>MBrutals<small style="display:block;color:#667085;font-size:.65rem;font-weight:750">CSS DESIGN SYSTEM</small></span></a>
+  <div class="navlinks"><a href="#why">Why</a><a href="#components">Components</a><a href="#layouts">Layouts</a><a href="#install">Install</a></div>
+  <div class="nav-actions">
+    <div class="font-switch" aria-label="Font style">
+      <button class="is-active" data-mb-font-switch="archivo">ARCHIVO</button>
+      <button data-mb-font-switch="syne">SYNE</button>
     </div>
-  </nav>
-
-  <header id="top" class="hero demo-grid-bg">
-    <div class="demo-wrap">
-      <div class="hero-layout">
-        <div>
-          <span class="eyebrow">✦ MBrutals 1.3</span>
-          <h1><span class="ink">MAKE IT</span><span class="blue">LOUD.</span></h1>
-          <p class="hero-copy">
-            A modern Neo Brutalist CSS framework for plain HTML.
-            Bold surfaces, playful motion, expressive forms and layout primitives —
-            without React, Vue or a component framework.
-          </p>
-          <div class="hero-actions">
-            <a href="#components" class="demo-btn demo-blue">Explore components →</a>
-            <a href="#install" class="demo-btn demo-white">Install</a>
-          </div>
-        </div>
-
-        <div class="hero-art">
-          <div class="hero-board">
-            <div class="browser-bar">
-              <span class="dot pink"></span><span class="dot yellow"></span><span class="dot green"></span>
-            </div>
-            <div class="hero-board-body">
-              <div class="mb-badge mb-badge-green">DESIGN SYSTEM</div>
-              <div class="hero-board-title" style="margin-top:20px">UI WITH<br>ATTITUDE.</div>
-              <div class="board-row">
-                <div class="board-mini">↗ Motion<br><small>Hover states</small></div>
-                <div class="board-mini">✦ Tokens<br><small>Pastel palette</small></div>
-              </div>
-              <div class="mb-alert mb-alert-purple" style="margin-top:22px">Everything is plain HTML.</div>
-            </div>
-          </div>
-          <div class="sticker a">NO<br>BORING<br>UI</div>
-          <div class="sticker b">CSS<br>FIRST<br>✦</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="marquee"><span>✦ NEO BRUTALISM &nbsp;&nbsp; ✦ VANILLA HTML &nbsp;&nbsp; ✦ RESPONSIVE &nbsp;&nbsp; ✦ HARD SHADOWS &nbsp;&nbsp; ✦ MICRO MOTION &nbsp;&nbsp; ✦ NEO BRUTALISM &nbsp;&nbsp; ✦ VANILLA HTML &nbsp;&nbsp; ✦ RESPONSIVE &nbsp;&nbsp; ✦ HARD SHADOWS &nbsp;&nbsp; ✦ MICRO MOTION</span></div>
-
-  <section id="features" class="section">
-    <div class="demo-wrap">
-      <div class="section-head">
-        <span class="eyebrow">Why MBrutals?</span>
-        <h2>Modern, playful, unapologetically bold.</h2>
-        <p>Everything is designed to feel like one coherent design language instead of a pile of generic Bootstrap-looking components.</p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature"><div class="feature-icon">⚡</div><h3>Micro Motion</h3><p>Cards lift, buttons press, inputs react and panels arrive with lightweight motion.</p></article>
-        <article class="feature"><div class="feature-icon">✦</div><h3>Two Font Modes</h3><p>Switch between Archivo Black + Space Grotesk or Syne + Poppins.</p></article>
-        <article class="feature"><div class="feature-icon">▣</div><h3>Real Forms</h3><p>Inputs, selects, textarea, checkbox, radio, toggle and range controls have their own visual system.</p></article>
-        <article class="feature"><div class="feature-icon">☰</div><h3>Sidebars</h3><p>Left, right and top panels are built into the vanilla JavaScript layer.</p></article>
-        <article class="feature"><div class="feature-icon">◆</div><h3>Flexible Cards</h3><p>Use the same card primitives as a 2-column grid or a clean list layout.</p></article>
-        <article class="feature"><div class="feature-icon">↗</div><h3>CDN Friendly</h3><p>Ship dist/mbrutals.min.css and dist/mbrutals.min.js directly from your own CDN.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section palette-section">
-    <div class="demo-wrap">
-      <div class="section-head">
-        <span class="eyebrow" style="background:var(--demo-green)">Design tokens</span>
-        <h2>A palette with personality.</h2>
-        <p>Soft pastels meet heavy ink. The result is friendly, modern and unmistakably brutalist.</p>
-      </div>
-      <div class="palette">
-        <div class="swatch">BLUE</div><div class="swatch">PINK</div><div class="swatch">YELLOW</div><div class="swatch">GREEN</div><div class="swatch">PURPLE</div><div class="swatch">WHITE</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="components" class="section component-section">
-    <div class="demo-wrap">
-      <div class="section-head">
-        <span class="eyebrow">Components</span>
-        <h2>Not your average button collection.</h2>
-        <p>Mix variants, sizes, pills, outlines, dashed styles and icon buttons while keeping the same physical interaction.</p>
-      </div>
-
-      <div class="component-layout">
-        <div class="demo-panel">
-          <div class="mb-kicker">Button playground</div>
-          <h3 class="mb-h3" style="margin:10px 0 20px">Pick a personality.</h3>
-          <div class="button-showcase">
-            <button class="mb-btn mb-btn-blue">Primary</button>
-            <button class="mb-btn mb-btn-pink">Pink</button>
-            <button class="mb-btn mb-btn-yellow">Accent</button>
-            <button class="mb-btn mb-btn-green">Success</button>
-            <button class="mb-btn mb-btn-purple">Purple</button>
-            <button class="mb-btn mb-btn-orange">Warning</button>
-            <button class="mb-btn mb-btn-red">Danger</button>
-            <button class="mb-btn mb-btn-dark">Dark</button>
-            <button class="mb-btn mb-btn-outline">Outline</button>
-            <button class="mb-btn mb-btn-dashed">Dashed</button>
-            <button class="mb-btn mb-btn-pill mb-btn-sm mb-btn-blue">Pill</button>
-            <button class="mb-btn mb-btn-icon mb-btn-yellow" aria-label="Star">★</button>
-          </div>
-          <hr class="mb-divider">
-          <div class="mb-flex mb-wrap mb-gap-3">
-            <span class="mb-badge mb-badge-blue">BLUE</span>
-            <span class="mb-badge mb-badge-pink">PINK</span>
-            <span class="mb-badge mb-badge-green">SUCCESS</span>
-            <span class="mb-badge mb-badge-yellow">NEW</span>
-          </div>
-        </div>
-
-        <pre class="demo-code"><span class="token-blue">&lt;button</span> <span class="token-pink">class</span>=<span class="token-green">"mb-btn mb-btn-blue"</span><span class="token-blue">&gt;</span>
-  Primary
-<span class="token-blue">&lt;/button&gt;</span>
-
-<span class="token-blue">&lt;button</span> <span class="token-pink">class</span>=<span class="token-green">"mb-btn mb-btn-pink"</span><span class="token-blue">&gt;</span>
-  Pink
-<span class="token-blue">&lt;/button&gt;</span>
-
-<span class="token-blue">&lt;button</span> <span class="token-pink">class</span>=<span class="token-green">"mb-btn mb-btn-dashed"</span><span class="token-blue">&gt;</span>
-  Dashed
-<span class="token-blue">&lt;/button&gt;</span></pre>
-      </div>
-    </div>
-  </section>
-
-  <section id="forms" class="section form-section">
-    <div class="demo-wrap">
-      <div class="form-layout">
-        <div>
-          <span class="eyebrow" style="background:#fff">Form system</span>
-          <h2 class="mb-display-2" style="margin:22px 0">Forms should feel alive.</h2>
-          <p class="mb-lead" style="color:#465166">Hover an input. Focus it. Toggle a switch. Every control has a tactile state without needing a JS plugin.</p>
-          <div class="form-note" style="margin-top:25px">✦ Try tabbing through the controls — focus states are intentionally loud.</div>
-        </div>
-
-        <form class="form-card" onsubmit="event.preventDefault(); MBrutals.toast('Your form is looking good.',{type:'success',title:'Demo submitted',icon:'✓'});">
-          <h3>Build something.</h3>
-          <div class="field-grid">
-            <div class="mb-form-group"><label class="mb-label" for="name">Name</label><input id="name" class="mb-input" placeholder="Marcell"></div>
-            <div class="mb-form-group"><label class="mb-label" for="email">Email</label><input id="email" class="mb-input" type="email" placeholder="hello@example.com"></div>
-          </div>
-          <div class="mb-form-group"><label class="mb-label" for="type">Project type</label><select id="type" class="mb-select"><option>Landing page</option><option>Dashboard</option><option>Documentation</option><option>Portfolio</option></select></div>
-          <div class="mb-form-group"><label class="mb-label" for="message">Message</label><textarea id="message" class="mb-textarea" placeholder="Tell us what you're building..."></textarea></div>
-          <div class="mb-flex mb-column mb-gap-3">
-            <label class="mb-check"><input type="checkbox" checked><span class="mb-check-box"></span><span>I agree to the imaginary terms.</span></label>
-            <label class="mb-radio"><input type="radio" name="plan" checked><span class="mb-radio-dot"></span><span>Starter</span></label>
-            <label class="mb-radio"><input type="radio" name="plan"><span class="mb-radio-dot"></span><span>Pro</span></label>
-            <div class="mb-switch-row"><span class="mb-text-bold">Enable notifications</span><label class="mb-toggle"><input type="checkbox" checked></label></div>
-            <div><label class="mb-label" for="range">Chaos level</label><input id="range" class="mb-range" type="range" min="0" max="100" value="72"></div>
-          </div>
-          <button class="mb-btn mb-btn-dark mb-btn-block" type="submit">Send it ✦</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="layouts" class="section cards-section">
-    <div class="demo-wrap">
-      <div class="section-head">
-        <span class="eyebrow" style="background:var(--demo-blue)">Card layouts</span>
-        <h2>One component. Two moods.</h2>
-        <p>Cards can become a 2-column grid or a horizontal list. The library only gives you the primitives — your content decides the personality.</p>
-      </div>
-
-      <div class="layout-tabs">
-        <button id="gridTab" class="active" onclick="showCards('grid')">Grid · 2 columns</button>
-        <button id="listTab" onclick="showCards('list')">List · horizontal</button>
-      </div>
-
-      <div id="cardGrid" class="card-demo-grid">
-        <article class="demo-card"><div class="demo-card-media">01</div><div class="demo-card-content"><h3>Design Tokens</h3><p>Central colors, borders, radius and shadows.</p></div></article>
-        <article class="demo-card"><div class="demo-card-media">02</div><div class="demo-card-content"><h3>Motion</h3><p>Subtle movement makes static UI feel tactile.</p></div></article>
-        <article class="demo-card"><div class="demo-card-media">03</div><div class="demo-card-content"><h3>Responsive</h3><p>Cards collapse naturally for smaller screens.</p></div></article>
-        <article class="demo-card"><div class="demo-card-media">04</div><div class="demo-card-content"><h3>Plain HTML</h3><p>Drop it into an old-school HTML file and go.</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section side-section">
-    <div class="demo-wrap">
-      <div class="section-head">
-        <span class="eyebrow" style="background:var(--demo-yellow)">Panels & navigation</span>
-        <h2>Open from the left, right or top.</h2>
-        <p>MBrutals ships the CSS and tiny vanilla JS behavior for modern side panels.</p>
-      </div>
-
-      <div class="side-grid">
-        <div class="side-card"><h3>← Left sidebar</h3><p>A full-height navigation panel with a soft backdrop.</p><button class="mb-btn mb-btn-blue" data-mb-toggle="sidebar" data-mb-target="#leftSidebar">Open sidebar</button></div>
-        <div class="side-card"><h3>→ Right sidebar</h3><p>Useful for account menus, carts or contextual tools.</p><button class="mb-btn mb-btn-pink" data-mb-toggle="sidebar" data-mb-target="#rightSidebar">Open sidebar</button></div>
-        <div class="side-card"><h3>↑ Top panel</h3><p>A wide panel for announcements, commands or quick actions.</p><button class="mb-btn mb-btn-yellow" data-mb-toggle="sidebar" data-mb-target="#topSidebar">Open panel</button></div>
-      </div>
-
-      <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:12px">
-        <button class="mb-btn mb-btn-purple" data-mb-toggle="modal" data-mb-target="#demoModal">Open modal</button>
-        <button class="mb-btn mb-btn-green" onclick="MBrutals.toast('This is a MBrutals toast.',{type:'success',title:'Nice!'});">Show toast</button>
-        <div class="mb-dropdown"><button class="mb-btn mb-btn-white" data-mb-toggle="dropdown">Dropdown ↓</button><div class="mb-dropdown-menu"><a class="mb-dropdown-item" href="#features">Features</a><a class="mb-dropdown-item" href="#forms">Forms</a><a class="mb-dropdown-item" href="#install">Install</a></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section demo-grid-bg">
-    <div class="demo-wrap">
-      <div class="section-head">
-        <span class="eyebrow" style="background:var(--demo-pink)">More primitives</span>
-        <h2>Tabs, accordion, progress, skeleton and tooltip.</h2>
-      </div>
-
-      <div class="mb-grid mb-grid-2 mb-gap-6">
-        <div class="mb-tabs">
-          <div class="mb-tab-list"><button class="mb-tab is-active" data-mb-toggle="tab" data-mb-target="#tab1">Overview</button><button class="mb-tab" data-mb-toggle="tab" data-mb-target="#tab2">Tokens</button><button class="mb-tab" data-mb-toggle="tab" data-mb-target="#tab3">Motion</button></div>
-          <div id="tab1" class="mb-tab-panel is-active"><h3 class="mb-h3">Made for plain HTML.</h3><p class="mb-text-muted">Use classes directly. No component compiler required.</p></div>
-          <div id="tab2" class="mb-tab-panel"><h3 class="mb-h3">Variables first.</h3><p class="mb-text-muted">Colors, shadows, radius and typography are exposed as CSS variables.</p></div>
-          <div id="tab3" class="mb-tab-panel"><h3 class="mb-h3">Motion is optional.</h3><p class="mb-text-muted">Reduced-motion users automatically get safer transitions.</p></div>
-        </div>
-
-        <div class="mb-accordion">
-          <div class="mb-accordion-item is-open"><button class="mb-accordion-trigger" data-mb-toggle="accordion">Why Neo Brutalism?<span></span></button><div class="mb-accordion-content"><div><div class="mb-accordion-body">Because UI can be useful and expressive at the same time.</div></div></div></div>
-          <div class="mb-accordion-item"><button class="mb-accordion-trigger" data-mb-toggle="accordion">Is it Bootstrap?<span></span></button><div class="mb-accordion-content"><div><div class="mb-accordion-body">No. It is a standalone visual system with its own classes and interaction language.</div></div></div></div>
-          <div class="mb-accordion-item"><button class="mb-accordion-trigger" data-mb-toggle="accordion">Can I use my own colors?<span></span></button><div class="mb-accordion-content"><div><div class="mb-accordion-body">Yes. Override the CSS variables or create your own utility layer.</div></div></div></div>
-        </div>
-      </div>
-
-      <div class="mb-grid mb-grid-3 mb-gap-5" style="margin-top:22px">
-        <div class="demo-panel"><div class="mb-flex mb-justify-between mb-items-center"><strong>Build progress</strong><strong>78%</strong></div><div class="mb-progress" style="margin-top:15px"><div class="mb-progress-bar mb-bg-blue" style="width:78%"></div></div></div>
-        <div class="demo-panel"><div class="mb-kicker mb-mb-3">Loading state</div><div class="mb-skeleton" style="height:18px;width:80%"></div><div class="mb-skeleton" style="height:18px;width:55%;margin-top:10px"></div></div>
-        <div class="demo-panel"><button class="mb-btn mb-btn-yellow mb-tooltip" data-mb-tooltip="A tiny Neo Brutalist tooltip">Hover me ✦</button></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="install" class="cta">
-    <div class="demo-wrap">
-      <div class="cta-box">
-        <div class="cta-star">✦</div>
-        <span class="eyebrow" style="background:#fff">Get started</span>
-        <h2>Build something people remember.</h2>
-        <p>Copy the files, link the stylesheet and start composing. Host the minified build from your own CDN when you're ready.</p>
-        <div class="mb-code" style="max-width:700px;margin-top:24px">&lt;link rel=&quot;stylesheet&quot; href=&quot;/mbrutals.min.css&quot;&gt;<br>&lt;script src=&quot;/mbrutals.min.js&quot;&gt;&lt;/script&gt;</div>
-        <div class="hero-actions"><button class="demo-btn demo-blue" data-mb-copy="<link rel='stylesheet' href='/mbrutals.min.css'>">Copy CSS tag</button><a class="demo-btn demo-white" href="#top">Back to top ↑</a></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="demo-wrap footer-inner">
-      <div><div class="footer-brand">MBrutals ✦</div><div class="footer-muted">Modern Neo Brutalist CSS Framework · v1.3.0</div></div>
-      <div class="footer-muted">Plain HTML · Vanilla JS · CDN ready</div>
-    </div>
-  </footer>
-
-  <aside id="leftSidebar" class="mb-sidebar mb-sidebar-left" aria-hidden="true">
-    <div class="mb-sidebar-header"><span>MBrutals Menu</span><button class="mb-btn mb-btn-yellow mb-btn-icon" data-mb-dismiss="sidebar">×</button></div>
-    <div class="mb-sidebar-nav"><a class="mb-sidebar-link is-active" href="#features">Features</a><a class="mb-sidebar-link" href="#components">Components</a><a class="mb-sidebar-link" href="#forms">Forms</a><a class="mb-sidebar-link" href="#layouts">Layouts</a></div>
-  </aside>
-
-  <aside id="rightSidebar" class="mb-sidebar mb-sidebar-right" aria-hidden="true">
-    <div class="mb-sidebar-header"><span>Quick settings</span><button class="mb-btn mb-btn-pink mb-btn-icon" data-mb-dismiss="sidebar">×</button></div>
-    <div style="margin-top:20px"><div class="mb-switch-row"><strong>Dark mode</strong><label class="mb-toggle"><input type="checkbox" onchange="document.documentElement.setAttribute('data-mb-theme',this.checked?'dark':'light')"></label></div><hr class="mb-divider"><div class="mb-kicker mb-mb-3">Font</div><div class="mb-flex mb-gap-2"><button class="mb-btn mb-btn-sm mb-btn-blue" data-mb-font-switch="archivo">Archivo</button><button class="mb-btn mb-btn-sm mb-btn-pink" data-mb-font-switch="syne">Syne</button></div></div>
-  </aside>
-
-  <aside id="topSidebar" class="mb-sidebar mb-sidebar-top" aria-hidden="true">
-    <div class="mb-sidebar-header"><span>✦ New in MBrutals 1.3</span><button class="mb-btn mb-btn-yellow mb-btn-icon" data-mb-dismiss="sidebar">×</button></div>
-    <div class="mb-grid mb-grid-3 mb-gap-4" style="margin-top:18px"><div><strong>Font switcher</strong><div class="mb-text-muted">Archivo/Syne modes.</div></div><div><strong>Modern forms</strong><div class="mb-text-muted">Animated controls.</div></div><div><strong>Side panels</strong><div class="mb-text-muted">Left, right & top.</div></div></div>
-  </aside>
-
-  <div id="demoModal" class="mb-modal" aria-hidden="true">
-    <div class="mb-modal-dialog">
-      <div class="mb-modal-header"><strong class="mb-text-xl">MBrutals Modal</strong><button class="mb-btn mb-btn-yellow mb-btn-icon" data-mb-dismiss="modal">×</button></div>
-      <div class="mb-modal-body"><p class="mb-text-lg">A modal with the same tactile visual language as the rest of the system.</p><div class="mb-alert mb-alert-green">✓ Keyboard Escape also closes this modal.</div></div>
-      <div class="mb-modal-footer"><span class="mb-text-muted">No dependency.</span><button class="mb-btn mb-btn-dark" data-mb-dismiss="modal">Done</button></div>
-    </div>
+    <button class="mb-btn mb-btn-yellow mb-btn-sm" data-mb-theme-switch="dark" onclick="this.dataset.mbThemeSwitch=document.documentElement.getAttribute('data-mb-theme')==='dark'?'light':'dark'">◐</button>
+    <button class="mb-btn mb-btn-blue mb-btn-sm mobile-only" data-mb-toggle="sidebar" data-mb-target="#mobileMenu">☰</button>
   </div>
+</nav>
+</header>
 
-  <script src="./src/mbrutals.js"></script>
-  <script>
-    function showCards(mode){
-      const grid=document.getElementById('cardGrid');
-      const a=document.getElementById('gridTab');
-      const b=document.getElementById('listTab');
-      if(mode==='list'){
-        grid.className='card-demo-list';
-        b.classList.add('active');a.classList.remove('active');
-      }else{
-        grid.className='card-demo-grid';
-        a.classList.add('active');b.classList.remove('active');
-      }
-    }
-  </script>
-</body>
-</html>
+<main id="top">
+<section class="hero">
+<div class="demo-wrap hero-grid">
+  <div>
+    <span class="kicker">✦ MBRUTALS 1.5 — CSS, REIMAGINED</span>
+    <h1>MAKE UI<br><em>LOUD.</em><br>NOT LOUD.</h1>
+    <p>A modern Neo Brutalist design system for plain HTML. Sharp hierarchy, tactile interactions, custom controls, responsive layouts, and motion — without a frontend framework.</p>
+    <div class="hero-actions"><a href="#install" class="btn-demo blue">Start building ↗</a><button class="btn-demo" data-mb-toggle="sidebar" data-mb-target="#docsPanel">Explore system</button></div>
+    <div class="mb-flex mb-flex-wrap mb-gap-3 mb-mt-6"><span class="mb-badge mb-badge-green">✓ Vanilla CSS</span><span class="mb-badge mb-badge-purple">JS optional</span><span class="mb-badge mb-badge-yellow">CDN ready</span></div>
+  </div>
+  <div class="hero-art">
+    <div class="poster">
+      <div class="poster-head"><div class="dots"><i class="dot" style="background:var(--d-pink)"></i><i class="dot" style="background:var(--d-yellow)"></i><i class="dot" style="background:var(--d-green)"></i></div><span style="font-size:.7rem;font-weight:950">MBrutals / 01</span></div>
+      <div class="poster-main"><div class="mini">DESIGN SYSTEM</div><h2>BUILD<br>WITH<br>ATTITUDE.</h2><div class="poster-line"></div><div class="poster-line short"></div></div>
+      <span class="mb-badge mb-badge-dark">HARD SHADOWS</span>
+    </div>
+    <div class="float one">FULL CUSTOM<br>FORMS ✦</div><div class="float two">HOVER<br>FEELS GOOD ✓</div>
+  </div>
+</div>
+</section>
+
+<div class="ticker"><div class="ticker-track"><span>✦ <b>NEO BRUTALISM</b></span><span>HARD SHADOWS</span><span>TACTILE MOTION</span><span>CUSTOM CONTROLS</span><span>VANILLA HTML</span><span>✦ <b>NEO BRUTALISM</b></span><span>HARD SHADOWS</span><span>TACTILE MOTION</span><span>CUSTOM CONTROLS</span><span>VANILLA HTML</span></div></div>
+
+<section id="why" class="section">
+<div class="demo-wrap">
+  <div class="heading"><span class="kicker">WHY MBRUTALS</span><h2>Not Bootstrap.<br>A visual language.</h2><p>MBrutals is designed around tactile surfaces and expressive composition. Components are built to feel like objects: they lift, press, wobble, slide, and react.</p></div>
+  <div class="feature-grid">
+    <article class="feature big"><div class="feature-num"><span>01</span><b>✦</b></div><h3>Every interaction has weight.</h3><p>Buttons physically press. Cards lift. Inputs respond. Panels slide into view. Motion is part of the component, not an afterthought.</p><div class="mb-mt-8"><button class="btn-demo dark mb-wiggle" onclick="MBrutals.toast('Interaction works — this is a real MBrutals toast.',{type:'success',title:'Nice click!'})">Try the interaction →</button></div></article>
+    <article class="feature pink"><div class="feature-num"><span>02</span><b>◈</b></div><h3>Custom controls</h3><p>Forms are drawn from scratch instead of relying on browser-default styling.</p></article>
+    <article class="feature green"><div class="feature-num"><span>03</span><b>⌁</b></div><h3>Responsive by design</h3><p>Grid, cards, navigation, sidebars and forms adapt cleanly.</p></article>
+    <article class="feature purple"><div class="feature-num"><span>04</span><b>↗</b></div><h3>Framework agnostic</h3><p>Use it in HTML, PHP, Laravel, Astro, static sites, or anywhere CSS works.</p></article>
+    <article class="feature yellow"><div class="feature-num"><span>05</span><b>✓</b></div><h3>CDN ready</h3><p>Publish dist and you're ready to ship.</p></article>
+  </div>
+</div>
+</section>
+
+<section id="components" class="section alt">
+<div class="demo-wrap showcase-grid">
+  <div>
+    <div class="heading"><span class="kicker">COMPONENT LAB</span><h2>Components with personality.</h2><p>Everything below is interactive. Open the modal, switch tabs, open the dropdown, and trigger a toast.</p></div>
+    <div class="sidebar-demo"><button class="btn-demo dark" data-mb-toggle="sidebar" data-mb-target="#leftSidebar">Left sidebar</button><button class="btn-demo pink" data-mb-toggle="sidebar" data-mb-target="#rightSidebar">Right sidebar</button><button class="btn-demo yellow" data-mb-toggle="offcanvas" data-mb-target="#topPanel">Top panel</button></div>
+  </div>
+  <div class="demo-card">
+    <h3>Button playground</h3>
+    <div class="button-wall"><button class="btn-demo blue">Primary</button><button class="btn-demo pink">Secondary</button><button class="btn-demo green">Success</button><button class="btn-demo yellow">Warning</button><button class="btn-demo purple">Info</button><button class="btn-demo dark">Dark</button><button class="btn-demo outline">Dashed</button><button class="btn-demo blue pill">Pill button</button><button class="btn-demo yellow icon-btn">✦</button><button class="btn-demo pink" data-mb-toggle="modal" data-mb-target="#demoModal">Open modal ↗</button><button class="btn-demo green" onclick="MBrutals.toast('Your component is ready to ship.',{type:'success',title:'All good'})">Toast ✓</button><div class="mb-dropdown"><button class="btn-demo purple" data-mb-toggle="dropdown">Dropdown ▾</button><div class="mb-dropdown-menu"><a class="mb-dropdown-item" href="#">Profile</a><a class="mb-dropdown-item" href="#">Settings</a><a class="mb-dropdown-item" href="#">Sign out</a></div></div></div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="demo-wrap showcase-grid">
+  <div class="demo-card">
+    <h3>Form system</h3>
+    <form class="form-demo" onsubmit="event.preventDefault();MBrutals.toast('Form submitted without leaving the page.',{type:'success',title:'Submitted'})">
+      <div class="form-row"><div class="field"><label for="name">NAME</label><input id="name" class="mb-input" placeholder="Marcellino"></div><div class="field"><label for="email">EMAIL</label><input id="email" class="mb-input" type="email" placeholder="hello@example.com"></div></div>
+      <div class="field"><label for="select">STYLE</label><select id="select" class="mb-select"><option>Neo Brutalist</option><option>Soft Brutalist</option><option>Experimental</option></select></div>
+      <div class="field"><label for="message">MESSAGE</label><textarea id="message" class="mb-textarea" placeholder="Tell us what you're building..."></textarea></div>
+      <div class="control-row"><input class="mb-check" id="agree" type="checkbox"><label class="mb-check-label" for="agree">I agree to the vibe.</label><label class="mb-switch"><input type="checkbox" checked><span class="mb-switch-track"><span class="mb-switch-thumb"></span></span>Motion</label></div>
+      <div class="control-row"><input class="mb-radio" id="r1" name="r" type="radio" checked><label class="mb-radio-label" for="r1">Archivo</label><input class="mb-radio" id="r2" name="r" type="radio"><label class="mb-radio-label" for="r2">Syne</label></div>
+      <div class="range-wrap"><label class="mb-label">ENERGY <span id="energyValue">72</span>%</label><input class="mb-range" type="range" min="0" max="100" value="72" oninput="document.getElementById('energyValue').textContent=this.value"></div>
+      <div class="form-note">✦ Focus an input. Toggle the switch. Drag the range. Every control has its own visual feedback.</div>
+      <button class="btn-demo blue" type="submit">Send message →</button>
+    </form>
+  </div>
+  <div>
+    <div class="heading"><span class="kicker">FORMS</span><h2>Default browser controls? Never heard of them.</h2><p>Inputs, selects, textarea, checkbox, radio, switch and range are fully styled with MBrutals — including hover and focus motion.</p></div>
+    <div class="component-preview"><h3>Micro interaction</h3><p>Click the button to open a toast, then try the controls on the left.</p><button class="btn-demo dark" onclick="MBrutals.toast('That little movement is intentional.',{type:'info',title:'Tactile UI'})">Trigger motion ✦</button></div>
+  </div>
+</div>
+</section>
+
+<section id="layouts" class="section alt">
+<div class="demo-wrap">
+  <div class="heading"><span class="kicker">LAYOUTS</span><h2>Cards that actually compose.</h2><p>Use the same card primitive as a two-column grid or as a vertical list. No special component framework required.</p></div>
+  <div class="layouts">
+    <div class="mb-card-grid"><article class="mb-card mb-bg-white mb-card-hover"><div class="mb-card-body"><span class="mb-badge mb-badge-blue">GRID / 01</span><h3 class="mb-h3 mb-mt-6">Product card</h3><p>Two-column cards are built into the system.</p></div></article><article class="mb-card mb-bg-pink mb-card-hover"><div class="mb-card-body"><span class="mb-badge">GRID / 02</span><h3 class="mb-h3 mb-mt-6">Feature card</h3><p>Hover, lift and tactile shadows.</p></div></article></div>
+    <div class="mb-card-list"><article class="mb-card mb-bg-white mb-card-hover list-card"><div class="list-thumb">01</div><div class="list-body"><h3>List layout</h3><p>Great for projects, articles, settings, dashboards, and content-heavy interfaces.</p></div></article><article class="mb-card mb-bg-green mb-card-hover list-card"><div class="list-thumb" style="background:var(--d-yellow)">02</div><div class="list-body"><h3>Horizontal composition</h3><p>Same card language, different geometry.</p></div></article></div>
+  </div>
+  <div class="tabs-demo mb-card">
+    <div class="mb-tabs"><div class="mb-tab-list"><button class="mb-tab is-active" data-mb-toggle="tab" data-mb-target="#tab1">Design</button><button class="mb-tab" data-mb-toggle="tab" data-mb-target="#tab2">Motion</button><button class="mb-tab" data-mb-toggle="tab" data-mb-target="#tab3">Accessibility</button></div><div id="tab1" class="mb-tab-panel is-active"><p><strong>Design:</strong> thick outlines, pastel surfaces, asymmetric composition and expressive typography.</p></div><div id="tab2" class="mb-tab-panel"><p><strong>Motion:</strong> hover lift, press states, panel transitions, modal entrance, skeleton shimmer and marquee.</p></div><div id="tab3" class="mb-tab-panel"><p><strong>Accessibility:</strong> focus-visible states, reduced-motion support, keyboard Escape handling and semantic controls.</p></div></div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="demo-wrap">
+  <div class="heading"><span class="kicker">PRICING UI EXAMPLE</span><h2>Even boring pricing can look good.</h2></div>
+  <div class="pricing">
+    <article class="price-card"><span class="mb-badge mb-badge-green">STARTER</span><div class="price mb-mt-6">$0</div><p>For experiments.</p><ul class="price-list"><li>✓ Core CSS</li><li>✓ Utilities</li><li>✓ Responsive</li></ul><button class="btn-demo blue mb-btn-block">Choose free</button></article>
+    <article class="price-card featured"><span class="mb-badge mb-badge-dark">MOST POPULAR</span><div class="price mb-mt-6">$9</div><p>For serious interfaces.</p><ul class="price-list"><li>✓ Everything in Starter</li><li>✓ Full components</li><li>✓ Vanilla JS</li></ul><button class="btn-demo dark mb-btn-block">Choose pro</button></article>
+    <article class="price-card"><span class="mb-badge mb-badge-purple">TEAM</span><div class="price mb-mt-6">$19</div><p>For design systems.</p><ul class="price-list"><li>✓ Team usage</li><li>✓ Custom tokens</li><li>✓ CDN deployment</li></ul><button class="btn-demo pink mb-btn-block">Choose team</button></article>
+  </div>
+</div>
+</section>
+
+<section id="install" class="cta"><div class="demo-wrap"><div class="cta-box"><div><span class="mb-badge mb-badge-dark">GET STARTED</span><h2>Ship something<br>with a pulse.</h2><p style="max-width:620px;font-weight:650">Drop the stylesheet into your project and start composing. For interactive components, include the tiny vanilla JavaScript bundle.</p></div><div class="mb-flex mb-column mb-gap-3" style="min-width:min(390px,100%)"><code class="mb-code">&lt;link rel="stylesheet" href="mbrutals.min.css"&gt;</code><code class="mb-code">&lt;script src="mbrutals.min.js"&gt;&lt;/script&gt;</code><button class="btn-demo dark" data-mb-copy="<link rel=&quot;stylesheet&quot; href=&quot;mbrutals.min.css&quot;>">Copy CSS import</button></div></div></div></section>
+</main>
+
+<footer class="footer"><div class="demo-wrap footer-inner"><div><strong>MBrutals ✦</strong><div style="color:#667085;font-size:.85rem">Modern Neo Brutalist CSS Framework · v1.5.0</div></div><div style="color:#667085;font-size:.85rem">Built for HTML. Designed to be remembered.</div></div></footer>
+
+<!-- SIDE PANELS -->
+<aside id="leftSidebar" class="mb-sidebar mb-sidebar-left" aria-hidden="true"><div class="mb-sidebar-header"><strong class="mb-h4">MBrutals Menu</strong><button class="mb-close" data-mb-dismiss="sidebar">×</button></div><span class="mb-badge mb-badge-blue">LEFT SIDEBAR</span><div class="mb-mt-6 mb-grid mb-gap-2"><a class="mb-btn mb-btn-white" href="#why">Why MBrutals</a><a class="mb-btn mb-btn-white" href="#components">Components</a><a class="mb-btn mb-btn-white" href="#layouts">Layouts</a><a class="mb-btn mb-btn-yellow" href="#install">Install</a></div></aside>
+<aside id="rightSidebar" class="mb-sidebar mb-sidebar-right" aria-hidden="true"><div class="mb-sidebar-header"><strong class="mb-h4">Quick Controls</strong><button class="mb-close" data-mb-dismiss="sidebar">×</button></div><div class="mb-alert mb-alert-green">✓ Sidebar is fully interactive.</div><div class="mb-mt-5"><label class="mb-switch"><input type="checkbox" checked><span class="mb-switch-track"><span class="mb-switch-thumb"></span></span>Enable motion</label></div><div class="mb-mt-5"><label class="mb-switch"><input type="checkbox"><span class="mb-switch-track"><span class="mb-switch-thumb"></span></span>Compact mode</label></div><button class="mb-btn mb-btn-pink mb-mt-6 mb-btn-block" onclick="MBrutals.toast('Control saved.',{type:'success',title:'Saved'})">Save settings</button></aside>
+<aside id="docsPanel" class="mb-sidebar mb-sidebar-right" aria-hidden="true"><div class="mb-sidebar-header"><strong class="mb-h4">Design System</strong><button class="mb-close" data-mb-dismiss="sidebar">×</button></div><p class="mb-text-muted">A quick tour of the MBrutals philosophy.</p><div class="mb-grid mb-gap-3 mb-mt-5"><div class="mb-box mb-bg-blue"><b>01 / Surfaces</b><br><span class="mb-text-sm">Bold borders + offset shadows.</span></div><div class="mb-box mb-bg-pink"><b>02 / Motion</b><br><span class="mb-text-sm">Every interaction has feedback.</span></div><div class="mb-box mb-bg-yellow"><b>03 / Type</b><br><span class="mb-text-sm">Big expressive headings.</span></div></div></aside>
+<div id="mobileMenu" class="mb-sidebar mb-sidebar-right" aria-hidden="true"><div class="mb-sidebar-header"><strong class="mb-h4">Navigate</strong><button class="mb-close" data-mb-dismiss="sidebar">×</button></div><div class="mb-grid mb-gap-2"><a class="mb-btn mb-btn-white" href="#why">Why</a><a class="mb-btn mb-btn-white" href="#components">Components</a><a class="mb-btn mb-btn-white" href="#layouts">Layouts</a><a class="mb-btn mb-btn-yellow" href="#install">Install</a></div></div>
+<div id="topPanel" class="mb-offcanvas" aria-hidden="true"><div class="mb-offcanvas-header"><div><span class="mb-badge mb-badge-yellow">TOP PANEL</span><strong class="mb-h3 mb-mt-2" style="display:block">MBrutals is built to be played with.</strong></div><button class="mb-close" data-mb-dismiss="offcanvas">×</button></div><div class="mb-flex mb-wrap mb-gap-3"><span class="mb-badge mb-badge-blue">Cards</span><span class="mb-badge mb-badge-pink">Forms</span><span class="mb-badge mb-badge-green">Sidebars</span><span class="mb-badge mb-badge-purple">Modal</span><span class="mb-badge mb-badge-orange">Toast</span></div></div>
+
+<div id="demoModal" class="mb-modal" aria-hidden="true"><div class="mb-modal-dialog"><div class="mb-modal-header"><strong class="mb-h4">A proper modal.</strong><button class="mb-close" data-mb-dismiss="modal">×</button></div><div class="mb-modal-body"><div class="mb-alert mb-alert-blue">✦ This modal is controlled by vanilla JavaScript.</div><p class="mb-mt-5">It supports backdrop click, Escape to close, focus, animation, and the same visual language as the rest of the system.</p><div class="mb-card mb-bg-yellow mb-mt-5"><div class="mb-card-body"><strong>That's the point.</strong><p class="mb-m-0 mb-mt-2">The framework should feel coherent, not like a collection of unrelated widgets.</p></div></div></div><div class="mb-modal-footer"><button class="mb-btn mb-btn-white" data-mb-dismiss="modal">Close</button><button class="mb-btn mb-btn-blue" onclick="MBrutals.toast('Modal action completed.',{type:'success',title:'Done'});MBrutals.closeModal(document.getElementById('demoModal'))">Continue →</button></div></div></div>
+<script src="./src/mbrutals.js"></script>
+</body></html>
