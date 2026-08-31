@@ -1,831 +1,782 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="MBrutals — Neo Brutalist CSS Framework for everyone."
-  >
-
   <title>MBrutals — Neo Brutalist CSS Framework</title>
 
-  <!-- MBrutals -->
-  <link rel="stylesheet" href="src/mbrutals.css">
+  <link rel="stylesheet" href="./src/mbrutals.css">
 
   <style>
-    /* =========================================
-       LANDING PAGE ONLY
-       ========================================= */
+    /* =========================================================
+       MBRUTALS DEMO LANDING PAGE
+       ========================================================= */
+
+    :root {
+      --demo-bg: #f7f6f1;
+      --demo-ink: #111827;
+      --demo-blue: #9ecbff;
+      --demo-pink: #ffb7d9;
+      --demo-yellow: #fff18a;
+      --demo-green: #b9f5cf;
+      --demo-purple: #d9c2ff;
+      --demo-orange: #ffca8b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      overflow-x: hidden;
-    }
-
-    .hero-grid {
-      background-image:
-        linear-gradient(rgba(20, 27, 43, .08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(20, 27, 43, .08) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-
-    .display-title {
-      font-size: clamp(4rem, 13vw, 10rem);
-      line-height: .82;
-      letter-spacing: -.08em;
-      font-weight: 950;
-    }
-
-    .section-title {
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: .95;
-      letter-spacing: -.05em;
-      font-weight: 950;
-    }
-
-    .marquee {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      border-top: 3px solid var(--mb-border);
-      border-bottom: 3px solid var(--mb-border);
-      background: var(--mb-yellow);
-      padding: 14px 0;
-      font-weight: 900;
-    }
-
-    .marquee-inner {
-      display: inline-block;
-      animation: marquee 18s linear infinite;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .big-m {
-      font-size: clamp(12rem, 35vw, 35rem);
-      line-height: .7;
-      font-weight: 950;
-      letter-spacing: -.12em;
-      user-select: none;
-    }
-
-    .code {
-      background: #171717;
-      color: #fff;
-      border: 3px solid var(--mb-border);
-      box-shadow: 8px 8px 0 var(--mb-border);
-      padding: 24px;
-      overflow-x: auto;
+      margin: 0;
+      background: var(--demo-bg);
+      color: var(--demo-ink);
       font-family:
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Monaco,
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .demo-container {
+      width: min(1180px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .demo-grid-bg {
+      background-image:
+        linear-gradient(
+          rgba(17, 24, 39, .055) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(17, 24, 39, .055) 1px,
+          transparent 1px
+        );
+      background-size: 28px 28px;
+    }
+
+    .demo-nav {
+      position: sticky;
+      top: 18px;
+      z-index: 50;
+      width: min(1100px, calc(100% - 36px));
+      margin: 18px auto 0;
+      padding: 10px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 7px 7px 0 var(--demo-ink);
+    }
+
+    .demo-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .demo-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.15rem;
+      font-weight: 950;
+    }
+
+    .demo-logo-mark {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 14px;
+      background: var(--demo-blue);
+      box-shadow: 4px 4px 0 var(--demo-ink);
+      font-size: 1.5rem;
+      font-weight: 950;
+    }
+
+    .demo-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .demo-nav-links a {
+      padding: 10px 13px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .demo-nav-links a:hover {
+      border-color: var(--demo-ink);
+      background: var(--demo-yellow);
+    }
+
+    .hero {
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 100px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 999px;
+      background: var(--demo-pink);
+      box-shadow: 4px 4px 0 var(--demo-ink);
+      font-size: .78rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 28px 0 25px;
+      font-size: clamp(4.5rem, 10vw, 8.5rem);
+      line-height: .79;
+      letter-spacing: -.09em;
+      font-weight: 950;
+    }
+
+    .hero h1 .blue {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+
+    .hero h1 .blue::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -.08em;
+      right: -.08em;
+      bottom: .02em;
+      height: .48em;
+      border: 3px solid var(--demo-ink);
+      border-radius: 18px;
+      background: var(--demo-blue);
+      transform: rotate(-1deg);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-bottom: 32px;
+      color: #465166;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .demo-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 20px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 14px;
+      box-shadow: 5px 5px 0 var(--demo-ink);
+      font-weight: 950;
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
+
+    .demo-button:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--demo-ink);
+    }
+
+    .button-blue {
+      background: var(--demo-blue);
+    }
+
+    .button-yellow {
+      background: var(--demo-yellow);
+    }
+
+    .button-white {
+      background: #fff;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 510px;
+    }
+
+    .hero-window {
+      position: absolute;
+      inset: 40px 20px 30px 20px;
+      padding: 18px;
+      border: 4px solid var(--demo-ink);
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 12px 12px 0 var(--demo-ink);
+      transform: rotate(2deg);
+    }
+
+    .window-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--demo-ink);
+    }
+
+    .window-dot {
+      width: 13px;
+      height: 13px;
+      border: 2px solid var(--demo-ink);
+      border-radius: 50%;
+    }
+
+    .dot-pink {
+      background: var(--demo-pink);
+    }
+
+    .dot-yellow {
+      background: var(--demo-yellow);
+    }
+
+    .dot-green {
+      background: var(--demo-green);
+    }
+
+    .window-content {
+      padding: 35px 15px;
+    }
+
+    .window-badge {
+      width: max-content;
+      padding: 8px 13px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 999px;
+      background: var(--demo-green);
+      font-size: .75rem;
+      font-weight: 950;
+    }
+
+    .window-content h2 {
+      margin: 22px 0;
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: .9;
+      letter-spacing: -.07em;
+      font-weight: 950;
+    }
+
+    .mini-card {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 25px;
+      padding: 15px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 17px;
+      background: var(--demo-purple);
+      box-shadow: 5px 5px 0 var(--demo-ink);
+    }
+
+    .mini-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 45px;
+      width: 45px;
+      height: 45px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 12px;
+      background: #fff;
+      font-weight: 950;
+    }
+
+    .sticker {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 115px;
+      height: 115px;
+      border: 4px solid var(--demo-ink);
+      border-radius: 50%;
+      background: var(--demo-yellow);
+      box-shadow: 7px 7px 0 var(--demo-ink);
+      text-align: center;
+      font-weight: 950;
+      transform: rotate(-12deg);
+    }
+
+    .sticker-one {
+      top: 0;
+      right: -10px;
+    }
+
+    .sticker-two {
+      bottom: 0;
+      left: -20px;
+      background: var(--demo-pink);
+      transform: rotate(10deg);
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      max-width: 730px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      margin: 20px 0 16px;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: .87;
+      letter-spacing: -.07em;
+      font-weight: 950;
+    }
+
+    .section-heading p {
+      color: #536074;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .component-card {
+      min-height: 250px;
+      padding: 25px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 7px 7px 0 var(--demo-ink);
+    }
+
+    .component-card:nth-child(2) {
+      background: var(--demo-blue);
+      transform: translateY(20px);
+    }
+
+    .component-card:nth-child(3) {
+      background: var(--demo-yellow);
+    }
+
+    .component-card:nth-child(4) {
+      background: var(--demo-pink);
+    }
+
+    .component-card:nth-child(5) {
+      background: var(--demo-green);
+      transform: translateY(20px);
+    }
+
+    .component-card:nth-child(6) {
+      background: var(--demo-purple);
+    }
+
+    .component-number {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .number {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 12px;
+      background: #fff;
+      font-weight: 950;
+    }
+
+    .component-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.55rem;
+      letter-spacing: -.03em;
+      font-weight: 950;
+    }
+
+    .component-card p {
+      margin: 0;
+      color: #465166;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .showcase {
+      border-block: 3px solid var(--demo-ink);
+      background: var(--demo-blue);
+    }
+
+    .showcase-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .showcase-copy h2 {
+      margin: 20px 0;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: .86;
+      letter-spacing: -.07em;
+      font-weight: 950;
+    }
+
+    .showcase-copy p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+
+    .ui-preview {
+      padding: 22px;
+      border: 4px solid var(--demo-ink);
+      border-radius: 25px;
+      background: #fff;
+      box-shadow: 11px 11px 0 var(--demo-ink);
+    }
+
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .preview-title {
+      font-size: 1.4rem;
+      font-weight: 950;
+    }
+
+    .preview-input {
+      width: 100%;
+      height: 52px;
+      padding: 0 15px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 13px;
+      outline: none;
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .preview-input:focus {
+      background: var(--demo-yellow);
+    }
+
+    .preview-alert {
+      margin-top: 15px;
+      padding: 14px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 14px;
+      background: var(--demo-green);
+      font-weight: 800;
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .code-section {
+      background: var(--demo-ink);
+      color: #fff;
+    }
+
+    .code-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .code-section .section-heading p {
+      color: #c8ced9;
+    }
+
+    .code-box {
+      overflow: hidden;
+      border: 3px solid #fff;
+      border-radius: 20px;
+      box-shadow: 9px 9px 0 var(--demo-yellow);
+      background: #151515;
+    }
+
+    .code-top {
+      display: flex;
+      gap: 7px;
+      padding: 13px 15px;
+      border-bottom: 2px solid #fff;
+    }
+
+    .code-body {
+      overflow-x: auto;
+      padding: 25px;
+      font-family:
+        "SFMono-Regular",
         Consolas,
         monospace;
       font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    .code-comment {
+      color: #9098a8;
+    }
+
+    .code-tag {
+      color: #9ecbff;
+    }
+
+    .code-attr {
+      color: #ffb7d9;
+    }
+
+    .code-value {
+      color: #b9f5cf;
+    }
+
+    .install {
+      padding: 110px 0;
+    }
+
+    .install-box {
+      position: relative;
+      overflow: hidden;
+      padding: 60px;
+      border: 4px solid var(--demo-ink);
+      border-radius: 30px;
+      background: var(--demo-yellow);
+      box-shadow: 12px 12px 0 var(--demo-ink);
+    }
+
+    .install-box h2 {
+      max-width: 700px;
+      margin: 20px 0;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: .85;
+      letter-spacing: -.07em;
+      font-weight: 950;
+    }
+
+    .install-box p {
+      max-width: 650px;
+      color: #465166;
+      font-size: 1.1rem;
       line-height: 1.7;
+      font-weight: 650;
     }
 
-    .swatch {
-      height: 110px;
-      border: 3px solid var(--mb-border);
-      box-shadow: 6px 6px 0 var(--mb-border);
-      padding: 12px;
+    .install-command {
       display: flex;
-      align-items: end;
-      font-weight: 900;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      max-width: 650px;
+      margin-top: 30px;
+      padding: 17px 20px;
+      border: 3px solid var(--demo-ink);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 5px 5px 0 var(--demo-ink);
+      font-family: monospace;
+      font-weight: 800;
     }
 
-    .floating {
-      transform: rotate(-3deg);
+    .footer {
+      border-top: 3px solid var(--demo-ink);
+      padding: 35px 0;
+      background: #fff;
     }
 
-    .floating-right {
-      transform: rotate(3deg);
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    @media (max-width: 768px) {
-      .display-title {
+    .footer-brand {
+      font-size: 1.2rem;
+      font-weight: 950;
+    }
+
+    .footer-text {
+      color: #657084;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    @media (max-width: 900px) {
+      .hero-layout,
+      .showcase-layout,
+      .code-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero-art {
+        min-height: 470px;
+      }
+
+      .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .component-card:nth-child(2),
+      .component-card:nth-child(5) {
+        transform: none;
+      }
+
+      .showcase-layout,
+      .code-layout {
+        gap: 45px;
+      }
+
+      .nav-hide {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .demo-container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .demo-nav {
+        width: calc(100% - 24px);
+        top: 12px;
+        margin-top: 12px;
+      }
+
+      .demo-nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0;
+      }
+
+      .hero h1 {
         font-size: 4.5rem;
       }
 
-      .big-m {
-        font-size: 15rem;
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-art {
+        min-height: 390px;
+      }
+
+      .hero-window {
+        inset: 25px 10px 25px 10px;
+      }
+
+      .sticker {
+        width: 90px;
+        height: 90px;
+        font-size: .8rem;
+      }
+
+      .component-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .install {
+        padding: 80px 0;
+      }
+
+      .install-box {
+        padding: 35px 25px;
+      }
+
+      .install-command {
+        overflow-x: auto;
+        justify-content: flex-start;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
 </head>
 
-<body class="mb-bg">
+<body>
 
-  <!-- =========================================
-       NAVBAR
-       ========================================= -->
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
 
-  <header class="mb-container mb-py-5">
+  <nav class="demo-nav">
 
-    <nav class="mb-navbar mb-card mb-bg-white">
+    <div class="demo-nav-inner">
 
-      <a href="#" class="mb-navbar-brand">
-        <span class="mb-avatar mb-bg-blue">M</span>
+      <a href="#" class="demo-logo">
+
+        <span class="demo-logo-mark">
+          M
+        </span>
 
         <span>
-          <strong>MBrutals</strong>
-          <small class="mb-text-muted">
-            CSS Framework
-          </small>
+          MBrutals
         </span>
+
       </a>
 
-      <div class="mb-navbar-nav">
-
-        <a href="#features" class="mb-nav-link">
-          Features
-        </a>
-
-        <a href="#components" class="mb-nav-link">
-          Components
-        </a>
-
-        <a href="#install" class="mb-nav-link">
-          Install
-        </a>
-
-        <a href="https://github.com/" class="mb-btn mb-btn-dark">
-          GitHub ↗
-        </a>
-
-      </div>
-
-      <button
-        class="mb-btn mb-btn-yellow mb-navbar-toggle"
-        data-mb-toggle="navbar"
-      >
-        ☰
-      </button>
-
-    </nav>
-
-  </header>
-
-
-  <!-- =========================================
-       HERO
-       ========================================= -->
-
-  <main>
-
-    <section class="hero-grid">
-
-      <div class="mb-container mb-py-16">
-
-        <div class="mb-grid mb-grid-2 mb-items-center mb-gap-12">
-
-          <div>
-
-            <div class="mb-flex mb-flex-wrap mb-gap-3 mb-mb-6">
-
-              <span class="mb-badge mb-badge-pink">
-                ✦ CSS FRAMEWORK
-              </span>
-
-              <span class="mb-badge mb-badge-green">
-                v0.1.0
-              </span>
-
-            </div>
-
-            <h1 class="display-title mb-mb-8">
-              M<span class="mb-text-blue">BRUTALS</span>
-            </h1>
-
-            <p class="mb-text-xl mb-mb-8" style="max-width: 650px;">
-              Neo Brutalist CSS framework untuk membuat website
-              modern, berani, dan punya karakter — tanpa framework
-              JavaScript.
-            </p>
-
-            <div class="mb-flex mb-flex-wrap mb-gap-4">
-
-              <a
-                href="#install"
-                class="mb-btn mb-btn-blue mb-btn-lg"
-              >
-                Get Started →
-              </a>
-
-              <a
-                href="#components"
-                class="mb-btn mb-btn-white mb-btn-lg"
-              >
-                Explore Components
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <!-- HERO CARD -->
-
-          <div class="mb-card mb-bg-yellow floating">
-
-            <div class="mb-flex mb-justify-between mb-items-center mb-mb-8">
-
-              <span class="mb-badge mb-badge-dark">
-                MBRUTALS
-              </span>
-
-              <span class="mb-text-2xl">
-                ✦
-              </span>
-
-            </div>
-
-            <div class="big-m">
-              M
-            </div>
-
-            <h2 class="mb-text-3xl mb-mt-6">
-              BUILD LOUD.
-            </h2>
-
-            <p class="mb-mt-3">
-              Make your interface impossible to ignore.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         MARQUEE
-         ========================================= -->
-
-    <div class="marquee">
-
-      <div class="marquee-inner">
-
-        ✦ NEO BRUTALISM
-        &nbsp;&nbsp;&nbsp;
-        ✦ CSS FIRST
-        &nbsp;&nbsp;&nbsp;
-        ✦ VANILLA HTML
-        &nbsp;&nbsp;&nbsp;
-        ✦ NO FRAMEWORK REQUIRED
-        &nbsp;&nbsp;&nbsp;
-        ✦ RESPONSIVE
-        &nbsp;&nbsp;&nbsp;
-
-        ✦ NEO BRUTALISM
-        &nbsp;&nbsp;&nbsp;
-        ✦ CSS FIRST
-        &nbsp;&nbsp;&nbsp;
-        ✦ VANILLA HTML
-        &nbsp;&nbsp;&nbsp;
-        ✦ NO FRAMEWORK REQUIRED
-        &nbsp;&nbsp;&nbsp;
-        ✦ RESPONSIVE
-
-      </div>
-
-    </div>
-
-
-    <!-- =========================================
-         INTRO
-         ========================================= -->
-
-    <section class="mb-container mb-py-16">
-
-      <div class="mb-grid mb-grid-2 mb-gap-12 mb-items-center">
-
-        <div>
-
-          <span class="mb-badge mb-badge-purple mb-mb-5">
-            WHY MBRUTALS?
-          </span>
-
-          <h2 class="section-title">
-            CSS yang
-            <span class="mb-highlight mb-highlight-blue">
-              nggak membosankan.
-            </span>
-          </h2>
-
-        </div>
-
-        <div>
-
-          <p class="mb-text-lg mb-mb-6">
-            MBrutals dibuat untuk developer yang ingin membangun
-            interface dengan visual Neo Brutalism tanpa harus
-            menggunakan React, Next.js, atau library JavaScript
-            tertentu.
-          </p>
-
-          <p class="mb-text-lg">
-            Tinggal import CSS, tambahkan class, lalu mulai membuat
-            website.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         FEATURES
-         ========================================= -->
-
-    <section id="features" class="mb-container mb-pb-16">
-
-      <div class="mb-flex mb-justify-between mb-items-end mb-mb-10">
-
-        <div>
-
-          <span class="mb-badge mb-badge-pink mb-mb-4">
-            FEATURES
-          </span>
-
-          <h2 class="section-title">
-            Built for
-            <span class="mb-text-blue">the web.</span>
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="mb-grid mb-grid-3 mb-gap-6">
-
-        <article class="mb-card mb-bg-blue">
-
-          <div class="mb-icon-box mb-bg-white mb-mb-6">
-            ⚡
-          </div>
-
-          <h3 class="mb-text-2xl">
-            Lightweight
-          </h3>
-
-          <p class="mb-mt-3">
-            Fokus pada CSS yang mudah digunakan tanpa dependency
-            framework frontend.
-          </p>
-
-        </article>
-
-
-        <article class="mb-card mb-bg-pink floating-right">
-
-          <div class="mb-icon-box mb-bg-white mb-mb-6">
-            ◈
-          </div>
-
-          <h3 class="mb-text-2xl">
-            Neo Brutalist
-          </h3>
-
-          <p class="mb-mt-3">
-            Thick borders, hard shadows, bold typography,
-            dan warna-warna yang berani.
-          </p>
-
-        </article>
-
-
-        <article class="mb-card mb-bg-green">
-
-          <div class="mb-icon-box mb-bg-white mb-mb-6">
-            ✓
-          </div>
-
-          <h3 class="mb-text-2xl">
-            Easy to Use
-          </h3>
-
-          <p class="mb-mt-3">
-            Cukup HTML + CSS. Tidak perlu mempelajari framework
-            baru untuk membuat UI.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         COMPONENT SHOWCASE
-         ========================================= -->
-
-    <section id="components" class="mb-section mb-bg-lavender">
-
-      <div class="mb-container mb-py-16">
-
-        <div class="mb-text-center mb-mb-12">
-
-          <span class="mb-badge mb-badge-yellow">
-            COMPONENTS
-          </span>
-
-          <h2 class="section-title mb-mt-5">
-            Everything you need.
-          </h2>
-
-          <p class="mb-text-lg mb-mt-5">
-            Komponen UI siap pakai untuk project kecil maupun besar.
-          </p>
-
-        </div>
-
-
-        <div class="mb-grid mb-grid-3 mb-gap-6">
-
-
-          <!-- BUTTON -->
-
-          <div class="mb-card mb-bg-white">
-
-            <h3 class="mb-text-xl mb-mb-5">
-              Buttons
-            </h3>
-
-            <div class="mb-flex mb-flex-wrap mb-gap-3">
-
-              <button class="mb-btn mb-btn-dark">
-                Dark
-              </button>
-
-              <button class="mb-btn mb-btn-blue">
-                Blue
-              </button>
-
-              <button class="mb-btn mb-btn-pink">
-                Pink
-              </button>
-
-              <button class="mb-btn mb-btn-yellow">
-                Yellow
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <!-- BADGES -->
-
-          <div class="mb-card mb-bg-white">
-
-            <h3 class="mb-text-xl mb-mb-5">
-              Badges
-            </h3>
-
-            <div class="mb-flex mb-flex-wrap mb-gap-3">
-
-              <span class="mb-badge mb-badge-blue">
-                BLUE
-              </span>
-
-              <span class="mb-badge mb-badge-pink">
-                PINK
-              </span>
-
-              <span class="mb-badge mb-badge-green">
-                SUCCESS
-              </span>
-
-              <span class="mb-badge mb-badge-yellow">
-                NEW
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <!-- ALERT -->
-
-          <div class="mb-card mb-bg-white">
-
-            <h3 class="mb-text-xl mb-mb-5">
-              Alerts
-            </h3>
-
-            <div class="mb-alert mb-alert-blue">
-              ℹ️ This is an information alert.
-            </div>
-
-          </div>
-
-
-          <!-- PROGRESS -->
-
-          <div class="mb-card mb-bg-white">
-
-            <h3 class="mb-text-xl mb-mb-5">
-              Progress
-            </h3>
-
-            <div class="mb-progress">
-
-              <div
-                class="mb-progress-bar mb-bg-blue"
-                style="width: 72%;"
-              ></div>
-
-            </div>
-
-            <div class="mb-flex mb-justify-between mb-mt-3">
-              <span>Loading</span>
-              <strong>72%</strong>
-            </div>
-
-          </div>
-
-
-          <!-- AVATAR -->
-
-          <div class="mb-card mb-bg-white">
-
-            <h3 class="mb-text-xl mb-mb-5">
-              Avatars
-            </h3>
-
-            <div class="mb-flex mb-gap-3">
-
-              <div class="mb-avatar mb-bg-blue">
-                M
-              </div>
-
-              <div class="mb-avatar mb-bg-pink">
-                B
-              </div>
-
-              <div class="mb-avatar mb-bg-yellow">
-                !
-              </div>
-
-              <div class="mb-avatar mb-bg-green">
-                ✓
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- CARD -->
-
-          <div class="mb-card mb-bg-yellow">
-
-            <span class="mb-badge mb-badge-dark mb-mb-5">
-              CARD
-            </span>
-
-            <h3 class="mb-text-xl">
-              Neo Brutal Card
-            </h3>
-
-            <p class="mb-mt-3">
-              Hard shadow + thick border + bold typography.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         COLOR SYSTEM
-         ========================================= -->
-
-    <section class="mb-container mb-py-16">
-
-      <div class="mb-grid mb-grid-2 mb-gap-12 mb-items-center">
-
-        <div>
-
-          <span class="mb-badge mb-badge-green">
-            DESIGN TOKENS
-          </span>
-
-          <h2 class="section-title mb-mt-5">
-            Loud colors.
-            <span class="mb-text-pink">
-              Simple rules.
-            </span>
-          </h2>
-
-          <p class="mb-text-lg mb-mt-6">
-            MBrutals menggunakan palette yang kuat untuk menjaga
-            karakter Neo Brutalist tetap terasa di setiap component.
-          </p>
-
-        </div>
-
-
-        <div class="mb-grid mb-grid-2 mb-gap-5">
-
-          <div
-            class="swatch"
-            style="background:#9ecbff;"
-          >
-            BLUE
-          </div>
-
-          <div
-            class="swatch"
-            style="background:#ffb7dc;"
-          >
-            PINK
-          </div>
-
-          <div
-            class="swatch"
-            style="background:#fff18a;"
-          >
-            YELLOW
-          </div>
-
-          <div
-            class="swatch"
-            style="background:#baf5ce;"
-          >
-            GREEN
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         INSTALLATION
-         ========================================= -->
-
-    <section id="install" class="mb-section mb-bg-dark">
-
-      <div class="mb-container mb-py-16">
-
-        <div class="mb-grid mb-grid-2 mb-gap-12 mb-items-center">
-
-          <div>
-
-            <span class="mb-badge mb-badge-yellow">
-              GET STARTED
-            </span>
-
-            <h2 class="section-title mb-text-white mb-mt-5">
-              Start building
-              <span class="mb-text-blue">
-                today.
-              </span>
-            </h2>
-
-            <p class="mb-text-lg mb-text-white mb-mt-6">
-              Download MBrutals, masukkan CSS ke project kamu,
-              lalu gunakan component dengan class yang tersedia.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <div class="code">
-              <code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-&lt;head&gt;
-  &lt;link
-    rel="stylesheet"
-    href="mbrutals.css"
-  &gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-
-  &lt;button class="mb-btn mb-btn-blue"&gt;
-    Hello MBrutals
-  &lt;/button&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-              </code>
-            </div>
-
-            <button
-              class="mb-btn mb-btn-yellow mb-mt-6"
-              data-mb-copy='&lt;button class="mb-btn mb-btn-blue"&gt;Hello MBrutals&lt;/button&gt;'
-            >
-              Copy Example
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         FINAL CTA
-         ========================================= -->
-
-    <section class="mb-container mb-py-16">
-
-      <div class="mb-card mb-bg-pink mb-text-center">
-
-        <span class="mb-badge mb-badge-dark">
-          MBRUTALS
-        </span>
-
-        <h2 class="section-title mb-mt-6">
-          Make it bold.
-        </h2>
-
-        <p class="mb-text-lg mb-mt-5">
-          Build websites that actually have personality.
-        </p>
-
-        <div class="mb-flex mb-justify-center mb-flex-wrap mb-gap-4 mb-mt-8">
-
-          <a
-            href="#install"
-            class="mb-btn mb-btn-dark mb-btn-lg"
-          >
-            Get MBrutals
-          </a>
-
-          <a
-            href="#components"
-            class="mb-btn mb-btn-white mb-btn-lg"
-          >
-            View Components
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================================
-       FOOTER
-       ========================================= -->
-
-  <footer class="mb-container mb-py-8">
-
-    <div class="mb-flex mb-justify-between mb-items-center mb-flex-wrap mb-gap-5">
-
-      <div>
-
-        <strong class="mb-text-xl">
-          MBrutals.
-        </strong>
-
-        <p class="mb-text-muted mb-mt-2">
-          Neo Brutalist CSS Framework.
-        </p>
-
-      </div>
-
-      <div class="mb-flex mb-gap-5">
+      <div class="demo-nav-links">
 
         <a href="#features">
           Features
@@ -839,29 +790,549 @@
           Install
         </a>
 
+        <a
+          href="https://github.com/"
+          class="demo-button button-yellow"
+          style="min-height:42px;padding:0 15px;"
+        >
+          GitHub ↗
+        </a>
+
+      </div>
+
+      <button
+        class="demo-button button-yellow nav-hide"
+        style="min-height:42px;padding:0 15px;"
+        data-mb-toggle="menu"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="hero demo-grid-bg">
+
+    <div class="demo-container">
+
+      <div class="hero-layout">
+
+        <div>
+
+          <span class="eyebrow">
+            ✦ Neo Brutalist CSS Framework
+          </span>
+
+          <h1>
+            MAKE IT
+            <span class="blue">
+              LOUD.
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            MBrutals adalah CSS framework modern untuk membuat
+            interface yang berani, playful, dan penuh karakter.
+            Tanpa React. Tanpa Next.js. Tanpa ribet.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#install"
+              class="demo-button button-blue"
+            >
+              Get Started →
+            </a>
+
+            <a
+              href="#components"
+              class="demo-button button-white"
+            >
+              Explore Components
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-art">
+
+          <div class="hero-window">
+
+            <div class="window-top">
+
+              <span class="window-dot dot-pink"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+
+            </div>
+
+            <div class="window-content">
+
+              <div class="window-badge">
+                MBRUTALS v1.2
+              </div>
+
+              <h2>
+                DESIGN
+                WITHOUT
+                BORING.
+              </h2>
+
+              <div class="mini-card">
+
+                <div class="mini-icon">
+                  ✦
+                </div>
+
+                <div>
+                  <strong>
+                    Neo Brutalist UI
+                  </strong>
+
+                  <div style="color:#536074;margin-top:4px;">
+                    Built with plain CSS.
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="sticker sticker-one">
+            CSS<br>
+            BUT<br>
+            BOLD!
+          </div>
+
+          <div class="sticker sticker-two">
+            NO<br>
+            BORING<br>
+            UI
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
-    <hr class="mb-mt-8">
+  </section>
 
-    <div class="mb-flex mb-justify-between mb-items-center mb-flex-wrap mb-gap-3 mb-mt-5">
 
-      <small>
-        © 2026 MBrutals. All rights reserved.
-      </small>
+  <!-- =====================================================
+       FEATURES
+       ===================================================== -->
 
-      <small>
-        Built with MBrutals ✦
-      </small>
+  <section id="features" class="section">
+
+    <div class="demo-container">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">
+          Why MBrutals?
+        </span>
+
+        <h2>
+          Built for people
+          who hate boring UI.
+        </h2>
+
+        <p>
+          MBrutals mengambil konsep Neo Brutalism dan mengemasnya
+          menjadi utility dan component system yang bisa langsung
+          digunakan pada HTML biasa.
+        </p>
+
+      </div>
+
+
+      <div class="component-grid">
+
+        <article class="component-card">
+
+          <div class="component-number">
+            <span class="number">01</span>
+            <span>✦</span>
+          </div>
+
+          <h3>
+            Plain CSS
+          </h3>
+
+          <p>
+            Tidak bergantung pada React, Vue, Next.js,
+            atau framework frontend lainnya.
+          </p>
+
+        </article>
+
+
+        <article class="component-card">
+
+          <div class="component-number">
+            <span class="number">02</span>
+            <span>⚡</span>
+          </div>
+
+          <h3>
+            Bold by Default
+          </h3>
+
+          <p>
+            Thick borders, hard shadows, rounded blocks,
+            dan typography yang punya karakter.
+          </p>
+
+        </article>
+
+
+        <article class="component-card">
+
+          <div class="component-number">
+            <span class="number">03</span>
+            <span>↗</span>
+          </div>
+
+          <h3>
+            Responsive
+          </h3>
+
+          <p>
+            Grid dan component tetap nyaman digunakan
+            dari desktop sampai mobile.
+          </p>
+
+        </article>
+
+
+        <article class="component-card">
+
+          <div class="component-number">
+            <span class="number">04</span>
+            <span>◈</span>
+          </div>
+
+          <h3>
+            Utility First
+          </h3>
+
+          <p>
+            Spacing, display, flex, typography, sizing,
+            dan utility lainnya tersedia langsung.
+          </p>
+
+        </article>
+
+
+        <article class="component-card">
+
+          <div class="component-number">
+            <span class="number">05</span>
+            <span>✓</span>
+          </div>
+
+          <h3>
+            Vanilla JS
+          </h3>
+
+          <p>
+            Modal, dropdown, toast, tabs, accordion,
+            dan komponen interaktif tanpa dependency.
+          </p>
+
+        </article>
+
+
+        <article class="component-card">
+
+          <div class="component-number">
+            <span class="number">06</span>
+            <span>♡</span>
+          </div>
+
+          <h3>
+            CDN Ready
+          </h3>
+
+          <p>
+            Build project dengan local file atau langsung
+            host MBrutals di CDN milikmu sendiri.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       COMPONENT SHOWCASE
+       ===================================================== -->
+
+  <section id="components" class="section showcase">
+
+    <div class="demo-container">
+
+      <div class="showcase-layout">
+
+        <div class="showcase-copy">
+
+          <span class="eyebrow">
+            Components
+          </span>
+
+          <h2>
+            Build fast.
+            Look loud.
+          </h2>
+
+          <p>
+            Dari button sederhana sampai modal, dropdown,
+            toast, accordion, form, card, navbar, dan banyak
+            lagi — semuanya punya visual language yang sama.
+          </p>
+
+          <a
+            href="#install"
+            class="demo-button button-white"
+          >
+            Start Building →
+          </a>
+
+        </div>
+
+
+        <div class="ui-preview">
+
+          <div class="preview-header">
+
+            <span class="preview-title">
+              Create Account
+            </span>
+
+            <span class="eyebrow"
+              style="
+                padding:6px 10px;
+                font-size:.65rem;
+                box-shadow:3px 3px 0 #111827;
+              "
+            >
+              NEW
+            </span>
+
+          </div>
+
+          <input
+            class="preview-input"
+            type="text"
+            placeholder="Your name"
+          >
+
+          <input
+            class="preview-input"
+            type="email"
+            placeholder="Email address"
+            style="margin-top:10px;"
+          >
+
+          <div class="preview-alert">
+            ✓ Everything looks good!
+          </div>
+
+          <div class="preview-actions">
+
+            <button
+              class="demo-button button-blue"
+              style="flex:1;"
+            >
+              Create Account
+            </button>
+
+            <button
+              class="demo-button button-white"
+            >
+              Cancel
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CODE
+       ===================================================== -->
+
+  <section class="section code-section">
+
+    <div class="demo-container">
+
+      <div class="code-layout">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Simple Setup
+          </span>
+
+          <h2>
+            That's it.
+          </h2>
+
+          <p>
+            Tidak ada konfigurasi rumit. Masukkan stylesheet
+            dan mulai gunakan class MBrutals di HTML kamu.
+          </p>
+
+        </div>
+
+
+        <div class="code-box">
+
+          <div class="code-top">
+
+            <span class="window-dot dot-pink"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+
+          </div>
+
+          <pre class="code-body"><span class="code-comment">&lt;!-- Add MBrutals --&gt;</span>
+
+<span class="code-tag">&lt;link</span>
+  <span class="code-attr">rel</span>=<span class="code-value">"stylesheet"</span>
+  <span class="code-attr">href</span>=<span class="code-value">"mbrutals.min.css"</span>
+<span class="code-tag">&gt;</span>
+
+<span class="code-tag">&lt;button</span>
+  <span class="code-attr">class</span>=<span class="code-value">"mb-btn mb-btn-blue"</span>
+<span class="code-tag">&gt;</span>
+  Hello MBrutals
+<span class="code-tag">&lt;/button&gt;</span></pre>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       INSTALL
+       ===================================================== -->
+
+  <section id="install" class="install">
+
+    <div class="demo-container">
+
+      <div class="install-box">
+
+        <span class="eyebrow">
+          Get MBrutals
+        </span>
+
+        <h2>
+          Your next UI
+          starts here.
+        </h2>
+
+        <p>
+          Download MBrutals, host file-nya di server atau CDN kamu,
+          dan gunakan di project HTML apa pun.
+        </p>
+
+        <div class="install-command">
+          <span>
+            npm install mbrutals
+          </span>
+
+          <strong>
+            Copy
+          </strong>
+        </div>
+
+        <div class="hero-actions" style="margin-top:30px;">
+
+          <a
+            href="#"
+            class="demo-button button-blue"
+          >
+            Download
+          </a>
+
+          <a
+            href="#components"
+            class="demo-button button-white"
+          >
+            View Components
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="footer">
+
+    <div class="demo-container">
+
+      <div class="footer-inner">
+
+        <div>
+
+          <div class="footer-brand">
+            MBrutals ✦
+          </div>
+
+          <div class="footer-text">
+            Neo Brutalist CSS Framework.
+          </div>
+
+        </div>
+
+        <div class="footer-text">
+          Made for the web · v1.2.0
+        </div>
+
+      </div>
 
     </div>
 
   </footer>
 
 
-  <!-- MBrutals JavaScript -->
-  <script src="src/mbrutals.js"></script>
+  <script src="./src/mbrutals.js"></script>
 
 </body>
 </html>
