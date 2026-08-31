@@ -1,12 +1,14 @@
 # Changelog
 
-## 1.3.0
-- Reworked visual system toward a more contemporary Neo Brutalist aesthetic.
-- Added font modes: Archivo Black + Space Grotesk, and Syne + Poppins.
-- Added tactile hover and active motion across cards, buttons and form controls.
-- Added custom form controls: input, select, textarea, checkbox, radio, toggle and range.
-- Added left, right and top sidebar primitives and JS behavior.
-- Added more button variants and interaction states.
-- Added card grid/list layout helpers.
-- Added demo landing page with component playgrounds.
-- Updated vanilla JS API version to 1.3.0.
+## 1.5.0
+
+- Major visual redesign focused on modern Neo Brutalism.
+- Added two complete font systems: Archivo Black + Space Grotesk and Syne + Poppins.
+- Added tactile hover, lift, press, pop, tilt and motion utilities.
+- Rebuilt form controls from scratch.
+- Added responsive left/right sidebars and top/bottom offcanvas panels.
+- Expanded button variants and sizes.
+- Improved grid/list card composition.
+- Improved modal, dropdown, tabs, accordion, toast and carousel interactions.
+- Added polished responsive demo landing page.
+- Added dark theme and reduced-motion support.
