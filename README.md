@@ -1,19 +1,6 @@
-# MBrutals
+# MBrutals v1.5.0
 
-MBrutals is a modern Neo Brutalist CSS framework for plain HTML. It provides layout primitives, utilities, expressive components, animated form controls and small vanilla JavaScript behaviors without requiring React, Vue or Next.js.
-
-## v1.3.0
-
-Highlights:
-- Archivo Black + Space Grotesk and Syne + Poppins font modes
-- tactile hover/press motion for buttons, cards and controls
-- custom inputs, textarea, select, checkbox, radio, toggle and range styles
-- left, right and top sidebar panels
-- modal, dropdown, toast, tabs, accordion and carousel behavior
-- 2-column card grid and horizontal card-list primitives
-- responsive layout utilities
-- dark theme variables and reduced-motion support
-- minified CDN-ready files in `dist/`
+MBrutals is a modern Neo Brutalist CSS framework for plain HTML. It focuses on tactile interfaces, bold typography, custom controls, expressive surfaces, and small vanilla-JS interactions.
 
 ## Quick start
 
@@ -22,10 +9,55 @@ Highlights:
 <script src="mbrutals.min.js"></script>
 ```
 
-The font system is intentionally opt-in. Load the fonts you want from your preferred provider, then set `data-mb-font="archivo"` or `data-mb-font="syne"` on `<html>`.
+The stylesheet can also be used by itself. JavaScript is only needed for interactive components such as modal, sidebar, offcanvas, dropdown, tabs, accordion, toast, carousel, and navbar behavior.
 
-Build distribution files with:
+## Font styles
 
-```bash
-npm run build
+Default: Archivo Black for headings and Space Grotesk for body text.
+
+Alternative:
+
+```html
+<html data-mb-font="syne">
 ```
+
+This switches headings to Syne and body text to Poppins.
+
+## Theme
+
+```html
+<html data-mb-theme="dark">
+```
+
+## Included
+
+- Responsive containers, grid, row/columns and utilities
+- Neo Brutalist buttons with tactile hover/press states
+- Cards, grid cards and list cards
+- Fully custom input, select, textarea, checkbox, radio, switch and range controls
+- Navbar and responsive mobile navigation
+- Left/right sidebars and top/bottom offcanvas panels
+- Modal
+- Dropdown
+- Tabs
+- Accordion
+- Toast API
+- Carousel
+- Alerts, badges, progress, avatar, spinner and skeleton
+- Breadcrumb, pagination, steps, pricing and table primitives
+- Motion utilities and reduced-motion support
+- CDN-friendly `dist/` build
+
+## JS API
+
+```js
+MBrutals.toast('Saved!', { type: 'success', title: 'Done' });
+MBrutals.openModal(document.querySelector('#myModal'));
+MBrutals.closeModal(document.querySelector('#myModal'));
+MBrutals.openPanel(document.querySelector('#mySidebar'));
+MBrutals.closePanel(document.querySelector('#mySidebar'));
+```
+
+## License
+
+MIT
