@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.5 — 2026-08-31
+- Added full component documentation with one HTML file per component.
+- Added Express documentation server with `/docs` and `/components/:name` routes.
+- Added copyable, line-numbered code examples.
+- Added expanded component variants and custom form controls.
+- Added modern docs landing page and refreshed library landing page.
+- Added refined tactile interactions and responsive documentation sidebar.
+
+# Changelog
+
 ## 1.5.0
 
 - Major visual redesign focused on modern Neo Brutalism.
