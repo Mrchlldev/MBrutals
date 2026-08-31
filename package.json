@@ -1,35 +1,14 @@
 {
   "name": "mbrutals",
-  "version": "1.5.5",
-  "description": "Modern Neo Brutalist CSS framework for plain HTML.",
+  "version": "1.6.2",
+  "description": "Modern Neo Brutalist CSS framework for vanilla HTML",
+  "type": "commonjs",
   "main": "dist/mbrutals.js",
   "style": "dist/mbrutals.css",
-  "files": [
-    "src",
-    "dist",
-    "docs",
-    "scripts",
-    "index.html",
-    "server.js",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md"
-  ],
   "scripts": {
-    "build": "node scripts/build.js",
     "start": "node server.js",
-    "dev": "node server.js"
+    "build": "node scripts/build.js"
   },
-  "keywords": [
-    "css",
-    "framework",
-    "neo-brutalism",
-    "brutalism",
-    "ui",
-    "html",
-    "vanilla-js"
-  ],
-  "license": "MIT",
   "dependencies": {
     "express": "^5.1.0"
   }
