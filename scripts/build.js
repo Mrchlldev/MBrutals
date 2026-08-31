@@ -12,4 +12,4 @@ fs.writeFileSync(path.join(dist,'mbrutals.css'),css);
 fs.writeFileSync(path.join(dist,'mbrutals.js'),js);
 fs.writeFileSync(path.join(dist,'mbrutals.min.css'),minCss(css));
 fs.writeFileSync(path.join(dist,'mbrutals.min.js'),minJs(js));
-console.log('MBrutals 1.5.0 built successfully.');
+console.log('MBrutals 1.5.5 built successfully.');
