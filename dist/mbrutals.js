@@ -1,4 +1,4 @@
-/*! MBrutals v1.5.5 | MIT | Modern Neo Brutalist UI JavaScript */
+/*! MBrutals v1.5.6 | MIT | Modern Neo Brutalist UI JavaScript */
 (function(w,d){'use strict';
  const $=(s,r=d)=>r.querySelector(s), $$=(s,r=d)=>Array.from(r.querySelectorAll(s));
  const target=(el)=>{const v=el?.getAttribute('data-mb-target')||el?.getAttribute('href');if(!v||v==='#')return null;try{return $(v)}catch{return null}};
@@ -34,6 +34,6 @@
   const ts=e.target.closest('[data-mb-theme-switch]');if(ts){const v=ts.getAttribute('data-mb-theme-switch');d.documentElement.setAttribute('data-mb-theme',v);try{localStorage.setItem('mbrutals-theme',v)}catch{}}
  });
  d.addEventListener('keydown',e=>{if(e.key==='Escape'){dropdownClose();$$('.mb-modal.is-open').forEach(closeModal);$$('.mb-sidebar.is-open,.mb-offcanvas.is-open').forEach(closePanel)}});
- w.MBrutals={version:'1.5.0',toast,openModal,closeModal,openPanel,closePanel,copy,carouselGo};
+ w.MBrutals={version:'1.5.6',toast,openModal,closeModal,openPanel,closePanel,copy,carouselGo};
  d.addEventListener('DOMContentLoaded',()=>{let font,theme;try{font=localStorage.getItem('mbrutals-font');theme=localStorage.getItem('mbrutals-theme')}catch{}if(font)d.documentElement.setAttribute('data-mb-font',font);if(theme)d.documentElement.setAttribute('data-mb-theme',theme);initReveal();initCarousels();$$('[data-mb-tooltip]').forEach(x=>x.classList.add('mb-tooltip'))});
 })(window,document);
