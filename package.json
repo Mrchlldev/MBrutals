@@ -1,27 +1,12 @@
 {
   "name": "mbrutals",
-  "version": "1.2.0",
-  "description": "MBrutals — a modern Neo Brutalist CSS UI framework for plain HTML.",
+  "version": "1.3.0",
+  "description": "MBrutals — a modern Neo Brutalist CSS framework for plain HTML.",
   "license": "MIT",
   "author": "MBrutals",
   "main": "dist/mbrutals.js",
   "style": "dist/mbrutals.css",
-  "files": [
-    "dist",
-    "src",
-    "README.md",
-    "LICENSE"
-  ],
-  "keywords": [
-    "css",
-    "ui",
-    "framework",
-    "neo-brutalism",
-    "neobrutalism",
-    "html",
-    "bootstrap-alternative"
-  ],
-  "scripts": {
-    "build": "node scripts/build.js"
-  }
+  "files": ["dist","src","README.md","LICENSE"],
+  "keywords": ["css","ui","framework","neo-brutalism","neobrutalism","html","bootstrap-alternative"],
+  "scripts": {"build":"node scripts/build.js"}
 }
