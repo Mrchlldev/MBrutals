@@ -1,15 +1,15 @@
-const fs=require('fs');
-const path=require('path');
-const root=path.resolve(__dirname,'..');
-const src=path.join(root,'src');
-const dist=path.join(root,'dist');
-fs.mkdirSync(dist,{recursive:true});
-const minifyCss=s=>s.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\s+/g,' ').replace(/\s*([{}:;,>+])\s*/g,'$1').replace(/;}/g,'}').trim();
-const minifyJs=s=>s.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n\r]*/g,'').replace(/\s+/g,' ').replace(/\s*([{};,])\s*/g,'$1').trim();
-for(const name of ['mbrutals.css','mbrutals.js']){
-  const content=fs.readFileSync(path.join(src,name),'utf8');
-  fs.writeFileSync(path.join(dist,name),content);
-  const min=name.endsWith('.css')?minifyCss(content):minifyJs(content);
-  fs.writeFileSync(path.join(dist,name.replace(/\.(css|js)$/,'.min.$1')),min);
-}
-console.log('MBrutals 1.3.0 build complete.');
+const fs = require('fs');
+const path = require('path');
+const root = path.resolve(__dirname, '..');
+const src = path.join(root, 'src');
+const dist = path.join(root, 'dist');
+fs.mkdirSync(dist, { recursive: true });
+function minCss(s){return s.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\s+/g,' ').replace(/\s*([{}:;,>+])\s*/g,'$1').replace(/;}/g,'}').trim()}
+function minJs(s){return s.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\s+/g,' ').trim()}
+const css=fs.readFileSync(path.join(src,'mbrutals.css'),'utf8');
+const js=fs.readFileSync(path.join(src,'mbrutals.js'),'utf8');
+fs.writeFileSync(path.join(dist,'mbrutals.css'),css);
+fs.writeFileSync(path.join(dist,'mbrutals.js'),js);
+fs.writeFileSync(path.join(dist,'mbrutals.min.css'),minCss(css));
+fs.writeFileSync(path.join(dist,'mbrutals.min.js'),minJs(js));
+console.log('MBrutals 1.5.0 built successfully.');
