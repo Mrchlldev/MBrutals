@@ -1,6 +1,6 @@
 {
   "name": "mbrutals",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "Modern Neo Brutalist CSS framework for plain HTML.",
   "main": "dist/mbrutals.js",
   "style": "dist/mbrutals.css",
