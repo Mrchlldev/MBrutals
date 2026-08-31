@@ -1,1 +1,19 @@
-const express=require('express');const path=require('path');const app=express();const PORT=process.env.PORT||3000;const root=__dirname;app.use(express.static(root));app.get('/docs',(req,res)=>res.sendFile(path.join(root,'docs','docs.html')));app.get('/components/:name',(req,res)=>{const file=path.join(root,'docs','components',`${req.params.name}.html`);res.sendFile(file,err=>{if(err)res.status(404).send('Component not found');});});app.use((req,res)=>res.sendFile(path.join(root,'index.html')));app.listen(PORT,()=>console.log(`MBrutals docs running on http://localhost:${PORT}`));
+const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
+const root = __dirname;
+app.use(express.static(root));
+app.use('/mbrutals.css', express.static(path.join(root, 'dist/mbrutals.css')));
+app.use('/mbrutals.js', express.static(path.join(root, 'dist/mbrutals.js')));
+app.use('/docs.css', express.static(path.join(root, 'docs/docs.css')));
+app.use('/docs.js', express.static(path.join(root, 'docs/docs.js')));
+app.get('/docs', (req, res) => res.sendFile(path.join(root, 'docs', 'docs.html')));
+app.get('/components/:name', (req, res) => {
+	const file = path.join(root, 'docs', 'components', `${req.params.name}.html`);
+	res.sendFile(file, err => {
+		if (err) res.status(404).send('Component not found');
+	});
+});
+app.use((req, res) => res.sendFile(path.join(root, 'index.html')));
+app.listen(PORT, () => console.log(`MBrutals docs running on http://localhost:${PORT}`));
