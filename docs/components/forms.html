@@ -1,18 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forms — MBrutals v1.5.5</title><link rel="stylesheet" href="/mbrutals.css"><link rel="stylesheet" href="/docs.css"></head><body><div class="doc-shell"><aside class="doc-sidebar"><div class="doc-brand"><div class="doc-logo">M</div><div><strong>MBrutals</strong><small>v1.5.5 Docs</small></div></div><div class="doc-group">Components</div><nav class="doc-nav"><a class="" href="/components/buttons">Buttons</a><a class="" href="/components/cards">Cards</a><a class="active" href="/components/forms">Forms</a><a class="" href="/components/alerts">Alerts</a><a class="" href="/components/badges">Badges</a><a class="" href="/components/navbar">Navbar</a><a class="" href="/components/sidebar">Sidebar</a><a class="" href="/components/modals">Modals</a><a class="" href="/components/dropdowns">Dropdowns</a><a class="" href="/components/tabs">Tabs</a><a class="" href="/components/accordion">Accordion</a><a class="" href="/components/carousel">Carousel</a><a class="" href="/components/progress">Progress</a><a class="" href="/components/avatars">Avatars</a><a class="" href="/components/breadcrumbs">Breadcrumbs</a><a class="" href="/components/pagination">Pagination</a><a class="" href="/components/pricing">Pricing</a><a class="" href="/components/list">List</a><a class="" href="/components/loading">Loading</a><a class="" href="/components/typography">Typography</a></nav></aside><main class="doc-main"><header class="doc-top"><button class="mb-btn mb-btn-yellow mobile-menu" data-doc-menu>☰ Menu</button><strong>Forms</strong><div class="actions"><button class="mb-btn mb-btn-white" data-mb-font-switch="default">Archivo</button><button class="mb-btn mb-btn-white" data-mb-font-switch="syne">Syne</button></div></header><div class="doc-content"><section class="doc-hero"><span class="kicker">Component / v1.5.5</span><h1>Forms</h1><p>Custom form controls designed from scratch for MBrutals.</p><div class="component-nav"><a href="/docs">Docs home</a><a href="/">Landing page</a></div></section><div class="doc-block"><div class="preview-grid"><div class="preview"><div class="mb-form-group"><label class="mb-label">Name</label><input class="mb-input" placeholder="Marcellino"></div><div class="mb-form-group"><label class="mb-label">Message</label><textarea class="mb-textarea" rows="4" placeholder="Tell us something..."></textarea></div><div class="mb-form-group"><label class="mb-label">Category</label><select class="mb-select"><option>Design</option><option>Development</option><option>Motion</option></select></div></div><div class="preview tinted"><div class="mb-form-group"><label class="mb-label">Preferences</label><label class="mb-check-label"><input class="mb-check" type="checkbox" checked> Receive updates</label></div><div class="mb-form-group"><label class="mb-radio-label"><input class="mb-radio" type="radio" name="x" checked> Neo Brutalism</label><br><label class="mb-radio-label"><input class="mb-radio" type="radio" name="x"> Minimal</label></div><div class="mb-form-group"><label class="mb-label">Enable feature</label><label class="mb-switch"><input type="checkbox" checked><span class="mb-switch-track"></span></label></div><div class="mb-form-group"><label class="mb-label">Intensity</label><input class="mb-range" type="range" value="70"></div></div></div><div class="code-wrap"><button class="copy-btn" data-copy-code>Copy</button><pre class="code"><span class="line">&lt;label class="mb-label"&gt;Email&lt;/label&gt;</span>
-<span class="line">&lt;input class="mb-input" type="email" placeholder="you@example.com"&gt;</span>
-<span class="line"></span>
-<span class="line">&lt;textarea class="mb-textarea" rows="4"&gt;&lt;/textarea&gt;</span>
-<span class="line"></span>
-<span class="line">&lt;select class="mb-select"&gt;</span>
-<span class="line">  &lt;option&gt;Choose one&lt;/option&gt;</span>
-<span class="line">&lt;/select&gt;</span>
-<span class="line"></span>
-<span class="line">&lt;label class="mb-check-label"&gt;</span>
-<span class="line">  &lt;input class="mb-check" type="checkbox"&gt; Remember me</span>
-<span class="line">&lt;/label&gt;</span>
-<span class="line"></span>
-<span class="line">&lt;label class="mb-switch"&gt;</span>
-<span class="line">  &lt;input type="checkbox"&gt;</span>
-<span class="line">  &lt;span class="mb-switch-track"&gt;&lt;/span&gt;</span>
-<span class="line">&lt;/label&gt;</span>
-</pre></div></div><footer class="doc-footer"><span>MBrutals — Neo Brutalist CSS Framework</span><span>v1.5.5 · Vanilla HTML + CSS + JS</span></footer></div></main></div><script src="/mbrutals.js"></script><script src="/docs.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forms — MBrutals</title><link rel="stylesheet" href="/docs.css"></head><body>
+<div class="docs-shell"><aside class="docs-side"><a class="mb-brand" href="/"><span class="mb-brand-mark">M</span>MBrutals</a><h3>Components</h3><a href="/components/buttons">Buttons</a><a href="/components/cards">Cards</a><a href="/components/forms">✓ Forms</a><a href="/components/modals">Modals</a><a href="/components/toast">Toast notifications</a><a href="/components/sidebar">Sidebars & drawers</a><a href="/components/navbar">Navigation</a><a href="/components/dropdowns">Dropdowns</a><a href="/components/tabs">Tabs</a><a href="/components/accordion">Accordion</a><a href="/components/alerts">Alerts</a><a href="/components/badges">Badges & tags</a><a href="/components/progress">Progress</a><a href="/components/avatars">Avatars</a><a href="/components/pagination">Pagination</a><a href="/components/breadcrumbs">Breadcrumbs</a><a href="/components/tooltips">Tooltips</a><a href="/components/loading">Loading</a><a href="/components/tables">Tables</a><a href="/components/divider">Dividers</a><a href="/components/utilities">Motion & utility</a><h3>Guides</h3><a href="/docs">Overview</a><a href="/docs/installation">Installation & CDN</a></aside>
+<main class="docs-main"><div class="mobile-doc-nav"><a class="mb-btn mb-btn-yellow" href="/docs">← Docs</a></div><div class="docs-head"><span class="mb-kicker">COMPONENT · FORMS</span><h1 class="mb-title">Forms</h1><p class="demo-description">Fully custom controls with animated focus and tactile checked states.</p></div><section class="demo-block">
+<h2 class="demo-title">Input</h2>
+<p class="demo-description">Fully custom controls with animated focus and tactile checked states.</p>
+<div class="demo-stage"><label class="mb-field"><span class="mb-label">Display name</span><input class="mb-input" placeholder="marcell"></label></div>
+<div class="code-title"><span>Example code</span></div>
+<div class="mb-code"><button class="mb-copy">Copy</button><pre id="code-1"><span>&lt;label class="mb-field"&gt;&lt;span class="mb-label"&gt;Display name&lt;/span&gt;&lt;input class="mb-input" placeholder="marcell"&gt;&lt;/label&gt;</span></pre></div>
+<hr class="mb-rule">
+</section><section class="demo-block">
+<h2 class="demo-title">Textarea</h2>
+<p class="demo-description">An alternate visual treatment using the same MBrutals component system.</p>
+<div class="demo-stage"><label class="mb-field"><span class="mb-label">Message</span><textarea class="mb-textarea" placeholder="Write something..."></textarea></label></div>
+<div class="code-title"><span>Example code</span></div>
+<div class="mb-code"><button class="mb-copy">Copy</button><pre id="code-2"><span>&lt;label class="mb-field"&gt;&lt;span class="mb-label"&gt;Message&lt;/span&gt;&lt;textarea class="mb-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;&lt;/label&gt;</span></pre></div>
+<hr class="mb-rule">
+</section><section class="demo-block">
+<h2 class="demo-title">Select</h2>
+<p class="demo-description">An alternate visual treatment using the same MBrutals component system.</p>
+<div class="demo-stage"><label class="mb-field"><span class="mb-label">Theme</span><select class="mb-select"><option>Yellow / Ink</option><option>Pink / Ink</option><option>Blue / Ink</option></select></label></div>
+<div class="code-title"><span>Example code</span></div>
+<div class="mb-code"><button class="mb-copy">Copy</button><pre id="code-3"><span>&lt;label class="mb-field"&gt;&lt;span class="mb-label"&gt;Theme&lt;/span&gt;&lt;select class="mb-select"&gt;&lt;option&gt;Yellow / Ink&lt;/option&gt;&lt;option&gt;Pink / Ink&lt;/option&gt;&lt;option&gt;Blue / Ink&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;</span></pre></div>
+<hr class="mb-rule">
+</section><section class="demo-block">
+<h2 class="demo-title">Checkbox + radio</h2>
+<p class="demo-description">An alternate visual treatment using the same MBrutals component system.</p>
+<div class="demo-stage"><div style="display:grid;gap:12px"><label class="mb-check"><input type="checkbox" checked> Enable animations</label><label class="mb-radio"><input type="radio" name="x" checked> Archivo</label><label class="mb-radio"><input type="radio" name="x"> Syne</label></div></div>
+<div class="code-title"><span>Example code</span></div>
+<div class="mb-code"><button class="mb-copy">Copy</button><pre id="code-4"><span>&lt;div style="display:grid;gap:12px"&gt;&lt;label class="mb-check"&gt;&lt;input type="checkbox" checked&gt; Enable animations&lt;/label&gt;&lt;label class="mb-radio"&gt;&lt;input type="radio" name="x" checked&gt; Archivo&lt;/label&gt;&lt;label class="mb-radio"&gt;&lt;input type="radio" name="x"&gt; Syne&lt;/label&gt;&lt;/div&gt;</span></pre></div>
+<hr class="mb-rule">
+</section><section class="demo-block">
+<h2 class="demo-title">Toggle</h2>
+<p class="demo-description">An alternate visual treatment using the same MBrutals component system.</p>
+<div class="demo-stage"><label style="display:flex;align-items:center;gap:12px;font-weight:800">Motion <span class="mb-toggle"><input type="checkbox" checked><span></span></span></label></div>
+<div class="code-title"><span>Example code</span></div>
+<div class="mb-code"><button class="mb-copy">Copy</button><pre id="code-5"><span>&lt;label style="display:flex;align-items:center;gap:12px;font-weight:800"&gt;Motion &lt;span class="mb-toggle"&gt;&lt;input type="checkbox" checked&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;</span></pre></div>
+<hr class="mb-rule">
+</section><section class="demo-block">
+<h2 class="demo-title">Range</h2>
+<p class="demo-description">An alternate visual treatment using the same MBrutals component system.</p>
+<div class="demo-stage"><label class="mb-field"><span class="mb-label">Intensity</span><input class="mb-range" type="range" value="72"></label></div>
+<div class="code-title"><span>Example code</span></div>
+<div class="mb-code"><button class="mb-copy">Copy</button><pre id="code-6"><span>&lt;label class="mb-field"&gt;&lt;span class="mb-label"&gt;Intensity&lt;/span&gt;&lt;input class="mb-range" type="range" value="72"&gt;&lt;/label&gt;</span></pre></div>
+<hr class="mb-rule">
+</section></main></div><div class="mb-backdrop"></div><script src="/mbrutals.js"></script><script src="/docs.js"></script></body></html>
