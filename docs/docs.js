@@ -1,0 +1,2 @@
+
+(function(){const d=document;const side=d.querySelector('.doc-sidebar');d.addEventListener('click',e=>{const c=e.target.closest('[data-copy-code]');if(c){const code=c.parentElement.querySelector('.code')?.innerText.replace(/^\d+\s?/gm,'');navigator.clipboard?.writeText(code||'').then(()=>{const old=c.textContent;c.textContent='Copied!';setTimeout(()=>c.textContent=old,1200)})}const m=e.target.closest('[data-doc-menu]');if(m){side?.classList.toggle('open')}})})();
