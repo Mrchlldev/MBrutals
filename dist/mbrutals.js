@@ -1,4 +1,4 @@
-/*! MBrutals v1.5.0 | MIT | Modern Neo Brutalist UI JavaScript */
+/*! MBrutals v1.5.5 | MIT | Modern Neo Brutalist UI JavaScript */
 (function(w,d){'use strict';
  const $=(s,r=d)=>r.querySelector(s), $$=(s,r=d)=>Array.from(r.querySelectorAll(s));
  const target=(el)=>{const v=el?.getAttribute('data-mb-target')||el?.getAttribute('href');if(!v||v==='#')return null;try{return $(v)}catch{return null}};
