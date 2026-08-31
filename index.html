@@ -1,54 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>MBrutals v1.5.5 — Neo Brutalist CSS</title>
-    <link rel="stylesheet" href="/mbrutals.css">
-    <link rel="stylesheet" href="/docs.css">
-  </head>
-  <body>
-    <nav class="doc-top" style="position:sticky;top:0"><a class="doc-brand" href="/" style="margin:0;text-decoration:none"><span class="doc-logo">M</span><span><strong>MBrutals</strong><small>v1.5.5</small></span></a>
-      <div class="actions"><a class="mb-btn mb-btn-white" href="/docs">Documentation →</a><a class="mb-btn mb-btn-dark" href="/components/buttons">Components</a></div>
-    </nav>
-    <section class="doc-content">
-      <div class="doc-hero"><span class="kicker">Neo Brutalist CSS Framework</span>
-        <h1>BUILD <span>LOUD.</span><br>SHIP CLEAN.</h1>
-        <p>Modern CSS components, tactile interactions and a complete vanilla-JS layer — designed for HTML first.</p>
-        <div class="component-nav"><a class="mb-btn mb-btn-blue" href="/docs">Explore docs →</a><a class="mb-btn mb-btn-white" href="/components/forms">See custom forms</a><button class="mb-btn mb-btn-yellow" data-mb-font-switch="syne">Try Syne</button></div>
-      </div>
-      <div class="mb-grid mb-grid-3 mb-gap-5">
-        <article class="mb-card mb-card-hover mb-bg-blue">
-          <div class="mb-card-body"><span class="mb-badge mb-badge-dark">01</span>
-            <h2 class="mb-h2">Tactile</h2>
-            <p>Every surface feels physical with hard shadows and motion.</p>
-          </div>
-        </article>
-        <article class="mb-card mb-hover-tilt mb-bg-pink">
-          <div class="mb-card-body"><span class="mb-badge mb-badge-dark">02</span>
-            <h2 class="mb-h2">Custom</h2>
-            <p>Forms, buttons and navigation are designed as one system.</p>
-          </div>
-        </article>
-        <article class="mb-card mb-hover-pop mb-bg-yellow">
-          <div class="mb-card-body"><span class="mb-badge mb-badge-dark">03</span>
-            <h2 class="mb-h2">Vanilla</h2>
-            <p>Drop the CSS and JS into any HTML project or your CDN.</p>
-          </div>
-        </article>
-      </div>
-      <div class="doc-block">
-        <div class="preview mb-bg-dark">
-          <div class="mb-flex mb-justify-between mb-items-center mb-wrap mb-gap-4">
-            <div><span class="mb-badge mb-badge-yellow">v1.5.5</span>
-              <h2 class="mb-display-3 mb-text-white">20+ components.<br>One visual language.</h2>
-            </div><a class="mb-btn mb-btn-blue" href="/docs">Open Docs ↗</a>
-          </div>
-        </div>
-      </div>
-      <footer class="doc-footer"><span>MBrutals ✦ Modern Neo Brutalist CSS</span><span>MIT · v1.5.5</span></footer>
-    </section>
-    <script src="/mbrutals.js"></script>
-    <script src="/docs.js"></script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MBrutals — Make the web louder.</title>
+<link rel="stylesheet" href="/mbrutals.css">
+<style>
+body{overflow-x:hidden}.hero{padding:95px 0 80px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center}
+.hero h1{font-size:clamp(4rem,9vw,8rem);margin:25px 0}.hero-copy{font-size:1.15rem;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.art{min-height:520px}.poster{position:absolute;inset:25px 30px 20px 20px;border:4px solid var(--mb-ink);background:var(--mb-yellow);box-shadow:14px 14px 0 var(--mb-ink);padding:28px;transform:rotate(2deg)}
+.poster h2{font-family:var(--mb-title);font-size:4.5rem;line-height:.82;margin:45px 0 20px}.poster .mini{border:3px solid var(--mb-ink);background:#fff;padding:15px;box-shadow:5px 5px 0 var(--mb-ink)}
+.sticker{position:absolute;border:3px solid var(--mb-ink);box-shadow:6px 6px 0 var(--mb-ink);padding:14px;background:var(--mb-pink);font-weight:950}.s1{right:-5px;top:0;transform:rotate(8deg)}.s2{left:0;bottom:5px;background:var(--mb-blue);transform:rotate(-8deg)}
+.section-head{max-width:760px;margin-bottom:45px}.section-head h2{font-size:clamp(3rem,6vw,5.5rem);margin:18px 0}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{min-height:245px}.feature:nth-child(2){transform:translateY(18px)}.feature:nth-child(5){transform:translateY(18px)}
+.dark{background:var(--mb-ink);color:#fff}.dark .mb-muted{color:#c5cad2}.dark .feature{background:#1c1e24;color:#fff;border-color:#fff;box-shadow:7px 7px 0 var(--mb-yellow)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:3px solid var(--mb-ink);background:#fff}.stat{padding:25px;border-right:3px solid var(--mb-ink)}.stat:last-child{border-right:0}.stat strong{display:block;font-family:var(--mb-title);font-size:2.4rem}
+.font-switch{position:fixed;z-index:2000;right:16px;bottom:16px;border:3px solid var(--mb-ink);background:#fff;box-shadow:5px 5px 0 var(--mb-ink);padding:8px;display:flex;gap:5px}.font-switch button{border:2px solid var(--mb-ink);background:#fff;padding:7px 9px;font-weight:900;cursor:pointer}.font-switch button.active{background:var(--mb-yellow)}
+footer{background:#fff;border-top:3px solid var(--mb-ink);padding:55px 0}.foot{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:40px}.foot h3{font-family:var(--mb-title);margin:0 0 14px}.foot a{display:block;text-decoration:none;font-weight:700;padding:4px 0}.foot a:hover{text-decoration:underline}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.feature:nth-child(2),.feature:nth-child(5){transform:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat{border-bottom:3px solid var(--mb-ink)}.foot{grid-template-columns:1fr 1fr}.art{min-height:430px}}
+</style>
+</head>
+<body>
+<nav class="mb-nav">
+<a class="mb-brand" href="/"><span class="mb-brand-mark">M</span>MBrutals</a>
+<div class="mb-nav-links"><a href="/docs">Docs</a><a href="/components/buttons">Components</a><a href="/docs/installation">Install</a><a href="https://github.com/">GitHub ↗</a></div>
+<button class="mb-btn mb-btn-yellow mb-nav-toggle">Menu</button>
+</nav>
+
+<main>
+<section class="hero mb-grid-bg"><div class="mb-container hero-grid">
+<div>
+<span class="mb-kicker">✦ v1.6.2 · CSS, but louder</span>
+<h1 class="mb-title">MAKE<br><span style="background:var(--mb-pink);border:3px solid var(--mb-ink);padding:0 10px;display:inline-block;transform:rotate(-1deg)">UI</span><br>UNBORING.</h1>
+<p class="hero-copy mb-muted">A vanilla CSS + JavaScript design system for interfaces that feel tactile, expressive and unapologetically Neo Brutalist.</p>
+<div class="actions"><a class="mb-btn mb-btn-dark mb-btn-lg mb-btn-pop" href="/docs">Start building →</a><a class="mb-btn mb-btn-lg mb-btn-blue" href="/components/buttons">Explore components</a></div>
+</div>
+<div class="art mb-hero-art">
+<div class="poster mb-float"><span class="mb-badge">NO FRAMEWORK</span><h2>LOUD<br>BY<br>DEFAULT.</h2><div class="mini"><b>Vanilla HTML</b><br><span class="mb-muted">Drop in the CSS. Keep your markup.</span></div></div>
+<div class="sticker s1">✦ 60+<br>components</div><div class="sticker s2">CSS<br>+ JS<br>ZERO DEP.</div>
+</div>
+</div></section>
+
+<section class="mb-marquee"><div class="mb-marquee-track">BUTTONS ✦ CARDS ✦ FORMS ✦ TOASTS ✦ MODALS ✦ DRAWERS ✦ NAVBARS ✦ TABS ✦ ACCORDIONS ✦ BUTTONS ✦ CARDS ✦ FORMS ✦ TOASTS ✦ MODALS ✦ DRAWERS ✦</div></section>
+
+<section class="mb-section"><div class="mb-container"><div class="section-head"><span class="mb-kicker">DESIGN SYSTEM</span><h2 class="mb-title">Not a Bootstrap skin.</h2><p class="mb-muted">MBrutals is built around hard edges, offset depth, playful geometry and tactile motion. Rounded is optional. Personality isn't.</p></div>
+<div class="feature-grid">
+<article class="mb-card feature mb-card-yellow mb-hover"><div style="font-size:2rem">↗</div><h3>Physical motion</h3><p>Hover, press, pop and shake interactions make components feel like objects.</p></article>
+<article class="mb-card feature mb-card-pink mb-hover"><div style="font-size:2rem">⌘</div><h3>Plain HTML</h3><p>No React, Vue or build step required. Link one stylesheet and start.</p></article>
+<article class="mb-card feature mb-card-blue mb-tilt"><div style="font-size:2rem">◈</div><h3>Many variants</h3><p>Shape, color, density and behavior can change without abandoning the visual language.</p></article>
+<article class="mb-card feature mb-card-green mb-pop"><div style="font-size:2rem">✓</div><h3>Custom forms</h3><p>Inputs, selects, radios, checkboxes, toggles and sliders are designed from scratch.</p></article>
+<article class="mb-card feature mb-card-purple mb-hover"><div style="font-size:2rem">☰</div><h3>Responsive panels</h3><p>Modal, drawer, sidebar and offcanvas interactions are included in vanilla JS.</p></article>
+<article class="mb-card feature mb-card-orange mb-shake"><div style="font-size:2rem">♡</div><h3>Expressive docs</h3><p>Each component page teaches one style at a time, with copyable code examples.</p></article>
+</div></div></section>
+
+<section class="mb-section dark"><div class="mb-container"><div class="section-head"><span class="mb-kicker">READY TO SHIP</span><h2 class="mb-title">One link.<br>One class.<br>Done.</h2><p class="mb-muted">Use the hosted build or your own CDN. MBrutals stays small enough to understand and flexible enough to remix.</p></div>
+<div class="stats"><div class="stat"><strong>60+</strong>components</div><div class="stat"><strong>2</strong>font systems</div><div class="stat"><strong>0</strong>dependencies</div><div class="stat"><strong>100%</strong>HTML friendly</div></div>
+<div style="margin-top:35px;display:flex;gap:12px;flex-wrap:wrap"><a href="/docs/installation" class="mb-btn mb-btn-yellow mb-btn-lg">Get CDN link →</a><a href="/docs" class="mb-btn mb-btn-outline mb-btn-lg" style="color:#fff;border-color:#fff">Read docs</a></div>
+</div></section>
+</main>
+
+<footer><div class="mb-container foot"><div><div class="mb-brand"><span class="mb-brand-mark">M</span>MBrutals</div><p class="mb-muted">Neo Brutalist CSS framework for people who want their interfaces to have a pulse.</p></div><div><h3>Explore</h3><a href="/docs">Documentation</a><a href="/components/buttons">Components</a><a href="/docs/installation">Installation</a></div><div><h3>Community</h3><a href="https://github.com/">GitHub ↗</a><a href="#">Changelog</a><a href="#">License</a></div></div></footer>
+
+<div class="font-switch"><button class="active" data-font="default">Archivo</button><button data-font="syne">Syne</button></div>
+<script src="/mbrutals.js"></script><script>
+document.querySelectorAll('[data-font]').forEach(b=>b.onclick=()=>{document.body.classList.toggle('mb-syne',b.dataset.font==='syne');document.querySelectorAll('[data-font]').forEach(x=>x.classList.toggle('active',x===b))});
+</script>
+</body></html>
