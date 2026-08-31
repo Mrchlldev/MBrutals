@@ -1,77 +1,31 @@
 # MBrutals
 
-**MBrutals** is a framework-agnostic CSS UI library for plain HTML, inspired by modern Neo Brutalist web design.
+MBrutals is a modern Neo Brutalist CSS framework for plain HTML. It provides layout primitives, utilities, expressive components, animated form controls and small vanilla JavaScript behaviors without requiring React, Vue or Next.js.
 
-It is designed around bold typography, thick outlines, offset hard shadows, pastel surfaces, expressive cards, and responsive layouts — without requiring React, Next.js, Tailwind, or any frontend framework.
+## v1.3.0
+
+Highlights:
+- Archivo Black + Space Grotesk and Syne + Poppins font modes
+- tactile hover/press motion for buttons, cards and controls
+- custom inputs, textarea, select, checkbox, radio, toggle and range styles
+- left, right and top sidebar panels
+- modal, dropdown, toast, tabs, accordion and carousel behavior
+- 2-column card grid and horizontal card-list primitives
+- responsive layout utilities
+- dark theme variables and reduced-motion support
+- minified CDN-ready files in `dist/`
 
 ## Quick start
 
 ```html
-<link rel="stylesheet" href="mbrutals.css">
-<script src="mbrutals.js"></script>
-
-<button class="mb-btn mb-btn-blue">Hello MBrutals</button>
+<link rel="stylesheet" href="mbrutals.min.css">
+<script src="mbrutals.min.js"></script>
 ```
 
-For CDN usage, publish the files inside `dist/` and use `mbrutals.min.css` and `mbrutals.min.js`.
+The font system is intentionally opt-in. Load the fonts you want from your preferred provider, then set `data-mb-font="archivo"` or `data-mb-font="syne"` on `<html>`.
 
-## Included
+Build distribution files with:
 
-- Responsive containers and grid utilities
-- Typography and spacing utilities
-- Neo Brutalist buttons, badges, chips, cards and callouts
-- Navbar and mobile navigation
-- Forms, inputs, select, textarea, checkbox, radio and switch
-- Alerts, progress, spinner and skeleton
-- Dropdown, modal and offcanvas
-- Accordion and tabs
-- Tables, breadcrumb and pagination
-- Lists, avatars and stats
-- Toast notifications
-- Tooltips
-- Carousel
-- Code blocks, empty states and file cards
-- Steps and timeline
-- Pricing cards
-- Marquee
-- Dark theme variables
-- Reduced-motion support
-
-## JavaScript
-
-MBrutals uses vanilla JavaScript only. Interactive components use `data-mb-*` attributes.
-
-Examples:
-
-```html
-<button class="mb-btn" data-mb-toggle="modal" data-mb-target="#demoModal">
-  Open Modal
-</button>
+```bash
+npm run build
 ```
-
-```html
-<button class="mb-btn" data-mb-copy="Hello MBrutals">
-  Copy
-</button>
-```
-
-Programmatic API:
-
-```js
-MBrutals.toast('Saved successfully', {
-  type: 'success',
-  title: 'Success'
-});
-```
-
-## Theme
-
-Add `data-mb-theme="dark"` to the root element to activate the built-in dark theme variables.
-
-## Browser support
-
-MBrutals targets modern browsers with standard CSS and vanilla JavaScript APIs.
-
-## License
-
-MIT
