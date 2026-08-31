@@ -61,3 +61,7 @@ MBrutals.closePanel(document.querySelector('#mySidebar'));
 ## License
 
 MIT
+
+## Documentation
+
+Run `npm install` then `npm start`. The demo is available at `/`, documentation at `/docs`, and each component at `/components/<name>`.
