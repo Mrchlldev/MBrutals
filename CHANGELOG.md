@@ -1,24 +1,9 @@
 # Changelog
 
-## 1.5.5 — 2026-08-31
-- Added full component documentation with one HTML file per component.
-- Added Express documentation server with `/docs` and `/components/:name` routes.
-- Added copyable, line-numbered code examples.
-- Added expanded component variants and custom form controls.
-- Added modern docs landing page and refreshed library landing page.
-- Added refined tactile interactions and responsive documentation sidebar.
-
-# Changelog
-
-## 1.5.0
-
-- Major visual redesign focused on modern Neo Brutalism.
-- Added two complete font systems: Archivo Black + Space Grotesk and Syne + Poppins.
-- Added tactile hover, lift, press, pop, tilt and motion utilities.
-- Rebuilt form controls from scratch.
-- Added responsive left/right sidebars and top/bottom offcanvas panels.
-- Expanded button variants and sizes.
-- Improved grid/list card composition.
-- Improved modal, dropdown, tabs, accordion, toast and carousel interactions.
-- Added polished responsive demo landing page.
-- Added dark theme and reduced-motion support.
+## 1.5.6
+- Reworked documentation into individual component pages.
+- Added separated variant demos and copyable line-numbered code examples.
+- Added complete interactive demos for toast, offcanvas, sidebar, modal, dropdown, tabs, accordion, carousel, forms, buttons, cards, alerts, badges, progress, loading, table, pricing, pagination, breadcrumbs, navbar, list, typography and utilities.
+- Added square/sharp Neo Brutalist surface variants.
+- Fixed Express static asset routes for root and docs assets.
+- Refreshed landing-page footer while preserving the v1.5 visual direction.
